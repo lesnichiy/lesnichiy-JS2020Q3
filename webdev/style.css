@@ -167,4 +167,34 @@ I have no idea how to fit them perfectly using only flex */
   color: #ffffff;
 }
 
+.webdev-socials {
+  margin-top: 184px;
+}
+
+.webdev-socials-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.webdev-socials-list-item + .webdev-socials-list-item {
+  margin-left: 30px;
+}
+
+.webdev-socials-list-item a {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.webdev-socials-list-item a:hover svg path {
+  fill: #009cc2;
+}
+.webdev-socials-list-item a:hover svg circle {
+  stroke: #009cc2;
+}
 /* ===== / header ===== */
