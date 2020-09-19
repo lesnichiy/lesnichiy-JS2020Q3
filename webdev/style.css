@@ -24,3 +24,78 @@ body {
   width: 1280px;
   margin: 0 auto;
 }
+
+/* ===== header ===== */
+.header-wrapper {
+  width: 1600px;
+  height: 744px;
+  background: url("assets/bg-image-header.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.header {
+  position: relative;
+}
+
+.header-logo {
+  display: block;
+  width: 44px;
+  height: 45px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-22px);
+}
+
+.header-logo:hover svg path {
+  fill: #009cc2;
+}
+
+.site-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 38px 0 0 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 95px;
+}
+
+.site-nav-list-item {
+  height: 20px;
+}
+
+.site-nav-list-item a {
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+  color: #ffffff;
+  line-height: 1.4;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.site-nav-list-item a:hover {
+  color: #009cc2;
+  border-bottom: 1px solid #009cc2;
+}
+
+.site-nav-list-item--current-page a {
+  font-weight: 500;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* Pixel Perfect margins for nav. The distances between menu items are not the same in the figma layout
+I have no idea how to fit them perfectly using only flex */
+.site-nav-list-item:first-child {
+  margin-left: 341px;
+}
+.site-nav-list-item:nth-child(2) {
+  margin-left: 85px;
+}
+.site-nav-list-item:nth-child(3) {
+  margin-left: 247px;
+}
+.site-nav-list-item:nth-child(4) {
+  margin-left: 83px;
+}
