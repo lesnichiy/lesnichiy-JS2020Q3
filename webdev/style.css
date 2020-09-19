@@ -69,24 +69,23 @@ body {
 
 /* ===== header ===== */
 .header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 1600px;
-  height: 744px;
+  height: 100vh;
   background: url("assets/bg-image-header.png") no-repeat 50% 50%;
   background-size: cover;
 }
 
 .header {
-  position: relative;
+  margin-top: 25px;
 }
 
 .header-logo {
   display: block;
   width: 44px;
   height: 45px;
-  position: absolute;
-  top: 25px;
-  left: 50%;
-  transform: translateX(-22px);
 }
 
 .header-logo:hover svg path {
@@ -96,18 +95,13 @@ body {
 .site-nav-list {
   list-style: none;
   margin: 0;
-  padding: 38px 0 0 0;
+  padding: 0;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 95px;
+  justify-content: center;
+  align-items: center;
 }
 
-.site-nav-list-item {
-  height: 20px;
-}
-
-.site-nav-list-item a {
+.site-nav-list-item--text-link a {
   display: block;
   padding-right: 0;
   padding-left: 0;
@@ -117,7 +111,7 @@ body {
   text-decoration: none;
 }
 
-.site-nav-list-item a:hover {
+.site-nav-list-item--text-link a:hover {
   color: #009cc2;
   border-bottom: 1px solid #009cc2;
 }
@@ -130,16 +124,14 @@ body {
 /* Pixel Perfect margins for nav. The distances between menu items are not the same in the figma layout
 I have no idea how to fit them perfectly using only flex */
 .site-nav-list-item:first-child {
-  margin-left: 341px;
+  margin-right: 85px;
 }
-.site-nav-list-item:nth-child(2) {
+.site-nav-list-item--logo {
+  margin-right: 100px;
+  margin-left: 100px;
+}
+.site-nav-list-item:last-child {
   margin-left: 85px;
-}
-.site-nav-list-item:nth-child(3) {
-  margin-left: 247px;
-}
-.site-nav-list-item:nth-child(4) {
-  margin-left: 83px;
 }
 
 .webdev-promo {
@@ -149,7 +141,7 @@ I have no idea how to fit them perfectly using only flex */
 }
 
 .webdev-promo-title {
-  margin: 128px 0 0 0;
+  margin: 0;
   font-size: 64px;
   line-height: 1.4;
   letter-spacing: 4.5px;
@@ -168,7 +160,7 @@ I have no idea how to fit them perfectly using only flex */
 }
 
 .webdev-socials {
-  margin-top: 184px;
+  margin-bottom: 90px;
 }
 
 .webdev-socials-list {
