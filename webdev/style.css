@@ -215,3 +215,99 @@ I have no idea how to fit them perfectly using only flex */
   margin-left: 30px;
 }
 /* ===== / rappresent ===== */
+
+/* ===== our-community ===== */
+.our-community {
+  display: flex;
+  height: 504px;
+  align-items: center;
+  padding: 120px 0 140px 110px;
+}
+
+.our-community-info {
+  width: 298px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.our-community-title {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 2.4px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.our-community-text {
+  text-align: center;
+  margin: 0;
+}
+.our-community-slider {
+  margin-left: 140px;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.our-community-slider__nav {
+  display: flex;
+  height: 18px;
+  align-items: center;
+  font-size: 18px;
+  line-height: 18px;
+  color: #373737;
+  position: absolute;
+  top: -39px;
+  left: 542px;
+}
+
+.our-community-slider__nav-arrow {
+  display: block;
+  width: 9px;
+  height: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.our-community-slider__nav-arrow:hover {
+  opacity: 0.7;
+}
+.our-community-slider__nav-arrow:active {
+  opacity: 0.5;
+}
+
+.our-community-slider__nav-arrow--left {
+  margin-right: 14px;
+}
+
+.our-community-slider__nav-arrow--right {
+  margin-left: 14px;
+}
+
+.our-community-slider-nav__divider {
+  margin: 0 4px;
+}
+
+.our-community-slider__image-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 244px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.our-community-slider__image-list img {
+  display: block;
+  width: 407px;
+  height: 244px;
+}
+
+.our-community-slider__image-list-item + .our-community-slider__image-list-item {
+  margin-left: 30px;
+}
+/* ===== / our-community ===== */
