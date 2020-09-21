@@ -18,6 +18,7 @@ body {
 .site-wrapper-1600px {
   width: 1600px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .content-container {
@@ -217,10 +218,14 @@ I have no idea how to fit them perfectly using only flex */
 /* ===== / rappresent ===== */
 
 /* ===== our-community ===== */
+.our-community-wrapper {
+  background-color: #f5f6f7;
+}
+
 .our-community {
   display: flex;
-  height: 504px;
   align-items: center;
+  height: 504px;
   padding: 120px 0 140px 110px;
 }
 
