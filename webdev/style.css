@@ -341,4 +341,81 @@ I have no idea how to fit them perfectly using only flex */
   margin-top: 0;
   margin-bottom: 32px;
 }
+
+.implement-button {
+  width: 180px; /* Only in the name of Pixel Perfect (all buttons 184px, but this is 180px)*/
+}
 /* ===== / implement ===== */
+
+/* ===== sign up ===== */
+.sign-up-wrapper {
+  background: url("assets/bg-image-sign-up.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 524px;
+  padding: 200px 0 220px;
+}
+
+.sign-up-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: flex-start;
+  width: 406px;
+  height: 46px;
+}
+
+.sign-up-email {
+  flex-grow: 1;
+  border: none;
+  color: #373737;
+  padding: 13px 24px;
+}
+
+.sign-up-email:focus {
+  outline: none;
+}
+
+.sign-up-button {
+  display: block;
+  width: 66px;
+  height: 46px;
+  background-color: #00afdb;
+  cursor: pointer;
+  border: none;
+  position: relative;
+}
+.sign-up-button:active {
+  outline: none;
+}
+
+.sign-up-button:hover {
+  background-color: #009cc2;
+}
+.sign-up-button::before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 14px;
+  background-image: url("assets/check-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  top: 16px;
+  left: 25px;
+  transition: 0.5s ease-in-out;
+}
+.sign-up-button:hover::before {
+  transform: scale(1.3);
+}
+/* ===== / sign up ===== */
