@@ -79,13 +79,18 @@ body {
 }
 
 .header {
-  margin-top: 25px;
+  position: relative;
 }
 
 .header-logo {
   display: block;
   width: 44px;
   height: 45px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-22px);
 }
 
 .header-logo:hover svg path {
@@ -94,7 +99,7 @@ body {
 
 .site-nav-list {
   list-style: none;
-  margin: 0;
+  margin: 38px 0 0 0;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -109,6 +114,7 @@ body {
   line-height: 1.4;
   font-weight: 400;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
 .site-nav-list-item--text-link a:hover {
@@ -121,14 +127,12 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-/* Pixel Perfect margins for nav. The distances between menu items are not the same in the figma layout
-I have no idea how to fit them perfectly using only flex */
+/* margins for nav in the name of Pixel Perfect. */
 .site-nav-list-item:first-child {
   margin-right: 85px;
 }
-.site-nav-list-item--logo {
-  margin-right: 100px;
-  margin-left: 100px;
+.site-nav-list-item:nth-child(3) {
+  margin-left: 244px;
 }
 .site-nav-list-item:last-child {
   margin-left: 85px;
