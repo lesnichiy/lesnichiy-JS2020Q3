@@ -28,7 +28,6 @@ body {
 
 .h2-title {
   font-size: 24px;
-  width: 95%;
   line-height: 1.2;
   letter-spacing: 1px;
   font-weight: 700;
@@ -202,6 +201,10 @@ I have no idea how to fit them perfectly using only flex */
 }
 .rappresent-info {
   width: 407px;
+}
+
+.rappresent-title {
+  width: 95%;
 }
 
 .rappresent-text {
@@ -386,6 +389,10 @@ I have no idea how to fit them perfectly using only flex */
   outline: none;
 }
 
+.sign-up-email::placeholder {
+  opacity: 0.5;
+}
+
 .sign-up-button {
   display: block;
   width: 66px;
@@ -419,3 +426,87 @@ I have no idea how to fit them perfectly using only flex */
   transform: scale(1.3);
 }
 /* ===== / sign up ===== */
+
+/* ===== download-app ===== */
+.download-app-wrapper {
+  background-color: #f5f6f7;
+}
+
+.download-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 120px 400px 180px;
+  height: 464px;
+}
+
+.download-app-title {
+  text-align: center;
+}
+
+.download-app-text {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.download-app-link-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.download-app-link-list-item + .download-app-link-list-item {
+  margin-left: 30px;
+}
+
+.download-app-button {
+  text-align: left;
+  padding-left: 18px;
+  position: relative;
+}
+
+.download-app-button::before {
+  content: '';
+  display: block;
+  width: 59px;
+  height: 46px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #009cc2;
+}
+
+.download-apple-button::after {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 20px;
+  position: absolute;
+  top: 13px;
+  right: 21px;
+  background-image: url("assets/icon-apple.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
+}
+
+.download-playmarket-button::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 23px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background-image: url("assets/icon-android.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  transition: 0.5s ease-in-out;
+}
+
+.download-app-button:hover::after {
+  transform: scale(1.2);
+}
+/* ===== / download-app ===== */
