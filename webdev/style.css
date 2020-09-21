@@ -316,3 +316,29 @@ I have no idea how to fit them perfectly using only flex */
   margin-left: 30px;
 }
 /* ===== / our-community ===== */
+
+/* ===== implement ===== */
+.implement {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 842px;
+  padding: 120px 0 140px;
+}
+.implement-picture {
+  display: block;
+  width: 407px;
+  height: 582px;
+  margin-left: 110px;
+  margin-right: 140px;
+}
+
+.implement-info {
+  width: 407px;
+}
+
+.implement-text {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+/* ===== / implement ===== */
