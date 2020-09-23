@@ -1,0 +1,570 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #4e4e4e;
+}
+
+.site-wrapper-1600px {
+  width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.content-container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.h2-title {
+  font-size: 24px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #373737;
+  margin-top: 0;
+  margin-bottom: 23px;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.button {
+  display: block;
+  width: 184px;
+  height: 46px;
+  line-height: 46px;
+  background-color: #00afdb;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #009cc2;
+}
+
+/* ===== header ===== */
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1600px;
+  height: 100vh;
+  background: url("assets/bg-image-header.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.header {
+  position: relative;
+}
+
+.header-logo {
+  display: block;
+  width: 44px;
+  height: 45px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-22px);
+}
+
+.header-logo:hover svg path {
+  fill: #009cc2;
+}
+
+.site-nav-list {
+  list-style: none;
+  margin: 38px 0 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.site-nav-list-item--text-link a {
+  display: block;
+  padding-right: 0;
+  padding-left: 0;
+  color: #ffffff;
+  line-height: 1.4;
+  font-weight: 400;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav-list-item--text-link a:hover {
+  color: #009cc2;
+  border-bottom: 1px solid #009cc2;
+}
+
+.site-nav-list-item--current-page a {
+  font-weight: 500;
+  border-bottom: 1px solid #ffffff;
+}
+
+/* margins for nav in the name of Pixel Perfect. */
+.site-nav-list-item:first-child {
+  margin-right: 85px;
+}
+.site-nav-list-item:nth-child(3) {
+  margin-left: 244px;
+}
+.site-nav-list-item:last-child {
+  margin-left: 85px;
+}
+
+.webdev-promo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.webdev-promo-title {
+  margin: 0;
+  font-size: 64px;
+  line-height: 1.4;
+  letter-spacing: 4.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.webdev-promo-text {
+  width: 40%;
+  margin: 14px 0 30px;
+  font-size: 18px;
+  line-height: 1.4;
+  text-align: center;
+  color: #ffffff;
+}
+
+.webdev-socials {
+  margin-bottom: 90px;
+}
+
+.webdev-socials-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.webdev-socials-list-item + .webdev-socials-list-item {
+  margin-left: 30px;
+}
+
+.webdev-socials-list-item a {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.webdev-socials-list-item a:hover svg path {
+  fill: #009cc2;
+}
+.webdev-socials-list-item a:hover svg circle {
+  stroke: #009cc2;
+}
+/* ===== / header ===== */
+
+/* ===== rappresent ===== */
+.rappresent {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 842px;
+  padding: 120px 0 140px;
+}
+.rappresent-info {
+  width: 407px;
+}
+
+.rappresent-title {
+  width: 95%;
+}
+
+.rappresent-text {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.rappresent-picture {
+  display: block;
+  width: 407px;
+  height: 582px;
+  margin-left: 30px;
+}
+/* ===== / rappresent ===== */
+
+/* ===== our-community ===== */
+.our-community-wrapper {
+  background-color: #f5f6f7;
+}
+
+.our-community {
+  display: flex;
+  align-items: center;
+  height: 504px;
+  padding: 120px 0 140px 110px;
+}
+
+.our-community-info {
+  width: 298px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.our-community-title {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 2.4px;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.our-community-text {
+  text-align: center;
+  margin: 0;
+}
+.our-community-slider {
+  margin-left: 140px;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.our-community-slider__nav {
+  display: flex;
+  height: 18px;
+  align-items: center;
+  font-size: 18px;
+  line-height: 18px;
+  color: #373737;
+  position: absolute;
+  top: -39px;
+  left: 542px;
+}
+
+.our-community-slider__nav-arrow {
+  display: block;
+  width: 9px;
+  height: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.our-community-slider__nav-arrow:hover {
+  opacity: 0.7;
+}
+.our-community-slider__nav-arrow:active {
+  opacity: 0.5;
+}
+
+.our-community-slider__nav-arrow--left {
+  margin-right: 14px;
+}
+
+.our-community-slider__nav-arrow--right {
+  margin-left: 14px;
+}
+
+.our-community-slider-nav__divider {
+  margin: 0 4px;
+}
+
+.our-community-slider__image-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 244px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.our-community-slider__image-list img {
+  display: block;
+  width: 407px;
+  height: 244px;
+}
+
+.our-community-slider__image-list-item + .our-community-slider__image-list-item {
+  margin-left: 30px;
+}
+/* ===== / our-community ===== */
+
+/* ===== implement ===== */
+.implement {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 842px;
+  padding: 120px 0 140px;
+}
+.implement-picture {
+  display: block;
+  width: 407px;
+  height: 582px;
+  margin-left: 110px;
+  margin-right: 140px;
+}
+
+.implement-info {
+  width: 407px;
+}
+
+.implement-text {
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.implement-button {
+  width: 180px; /* Only in the name of Pixel Perfect (all buttons 184px, but this is 180px)*/
+}
+/* ===== / implement ===== */
+
+/* ===== sign up ===== */
+.sign-up-wrapper {
+  background: url("assets/bg-image-sign-up.png") no-repeat 50% 50%;
+  background-size: cover;
+}
+
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 524px;
+  padding: 200px 0 220px;
+}
+
+.sign-up-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: flex-start;
+  width: 406px;
+  height: 46px;
+}
+
+.sign-up-email {
+  flex-grow: 1;
+  border: none;
+  color: #373737;
+  padding: 13px 24px;
+}
+
+.sign-up-email:focus {
+  outline: none;
+}
+
+.sign-up-email::placeholder {
+  opacity: 0.5;
+}
+
+.sign-up-button {
+  display: block;
+  width: 66px;
+  height: 46px;
+  background-color: #00afdb;
+  cursor: pointer;
+  border: none;
+  position: relative;
+}
+.sign-up-button:active {
+  outline: none;
+}
+
+.sign-up-button:hover {
+  background-color: #009cc2;
+}
+.sign-up-button::before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 14px;
+  background-image: url("assets/check-icon.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  position: absolute;
+  top: 16px;
+  left: 25px;
+  transition: 0.5s ease-in-out;
+}
+.sign-up-button:hover::before {
+  transform: scale(1.3);
+}
+/* ===== / sign up ===== */
+
+/* ===== download-app ===== */
+.download-app-wrapper {
+  background-color: #f5f6f7;
+}
+
+.download-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 120px 400px 180px;
+  height: 464px;
+}
+
+.download-app-title {
+  text-align: center;
+}
+
+.download-app-text {
+  text-align: center;
+  margin: 0 0 30px;
+}
+
+.download-app-link-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.download-app-link-list-item + .download-app-link-list-item {
+  margin-left: 30px;
+}
+
+.download-app-button {
+  text-align: left;
+  padding-left: 18px;
+  position: relative;
+}
+
+.download-app-button::before {
+  content: '';
+  display: block;
+  width: 59px;
+  height: 46px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #009cc2;
+}
+
+.download-apple-button::after {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 20px;
+  position: absolute;
+  top: 13px;
+  right: 21px;
+  background-image: url("assets/icon-apple.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s ease-in-out;
+}
+
+.download-playmarket-button::after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 23px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background-image: url("assets/icon-android.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  transition: 0.5s ease-in-out;
+}
+
+.download-app-button:hover::after {
+  transform: scale(1.2);
+}
+/* ===== / download-app ===== */
+
+/* ===== footer ===== */
+.footer-wrapper {
+  background-color: #000000;
+}
+
+.footer {
+  height: 185px;
+  position: relative;
+  padding: 73px 0 92px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-22px);
+}
+
+.footer-logo:hover svg path {
+  fill: #009cc2;
+}
+
+.footer-nav-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style: none;
+}
+
+.footer-nav-list-item:not(:first-child) {
+  list-style-image: url("assets/footer-nav-items-divider.png");
+}
+
+.footer-nav-list-item + .footer-nav-list-item {
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.footer-nav-list-item a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-nav-list-item a:hover {
+  color: #009cc2;
+}
+
+.footer-copyright {
+  color: #818181;
+}
+/* ===== / footer ===== */
