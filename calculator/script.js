@@ -18,6 +18,7 @@ for (let i = 0; i < numbersList.length; i++) {
 for (let i = 0; i < operationsList.length; i++) {
   let operationButton = operationsList[i];
   operationButton.addEventListener('click', function (evt) {
+    console.log(evt.currentTarget.id);
     operationPress(evt.target.textContent);
   });
 }
@@ -59,6 +60,8 @@ function operationPress(operation) {
       MemoryCurrentNumber *= +localOperationMemoryNumber;
     } else if (MemoryPendingOperation === '/') {
       MemoryCurrentNumber /= +localOperationMemoryNumber;
+    } else if (MemoryPendingOperation === 'X^Y') {
+      MemoryCurrentNumber =  MemoryCurrentNumber ** (+localOperationMemoryNumber);
     } else {
       MemoryCurrentNumber = +localOperationMemoryNumber;
     }
