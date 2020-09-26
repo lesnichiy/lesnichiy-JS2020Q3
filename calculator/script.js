@@ -29,6 +29,8 @@ for (let i = 0; i < clearButtonsList.length; i++) {
   });
 }
 
+decimalButton.addEventListener('click', decimal);
+
 function numberPress(number) {
   if (MemoryNewNumber) {
     displayBoard.value = number;
@@ -67,12 +69,26 @@ function operationPress(operation) {
 
 function clear(id) {
   if (id === 'ce') {
-    display.value = '0';
+    displayBoard.value = '0';
     MemoryNewNumber = true;
   } else if (id === 'c') {
-    display.value = '0';
+    displayBoard.value = '0';
     MemoryNewNumber = true;
     MemoryCurrentNumber = 0;
     MemoryPendingOperation = '';
   }
+}
+
+function decimal() {
+  let localDecimalMemoryNumber = displayBoard.value;
+
+  if (MemoryNewNumber) {
+    localDecimalMemoryNumber = '0.';
+    MemoryNewNumber = false;
+  } else {
+    if (localDecimalMemoryNumber.indexOf('.') === -1) {
+      localDecimalMemoryNumber += '.';
+    }
+  }
+  displayBoard.value = localDecimalMemoryNumber;
 }
