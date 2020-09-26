@@ -15,10 +15,45 @@ for (var i = 0; i < numbersList.length; i++) {
   });
 }
 
+for (var i = 0; i < operationsList.length; i++) {
+  var operationButton = operationsList[i];
+  operationButton.addEventListener('click', function (evt) {
+    operationPress(evt.target.textContent);
+  });
+}
+
 function numberPress(number) {
-  if (display.value === '0') {
-    display.value = number;
+  if (MemoryNewNumber) {
+    displayBoard.value = number;
+    MemoryNewNumber = false;
   } else {
-    display.value += number;
+    if (displayBoard.value === '0') {
+      displayBoard.value = number;
+    } else {
+      displayBoard.value += number;
+    }
+  }
+}
+
+function operationPress(operation) {
+  let localOperationMemoryNumber = displayBoard.value;
+
+  if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+    displayBoard.value = MemoryCurrentNumber;
+  } else {
+    MemoryNewNumber = true;
+    if (MemoryPendingOperation === '+') {
+      MemoryCurrentNumber += +localOperationMemoryNumber;
+    } else if (MemoryPendingOperation === '-') {
+      MemoryCurrentNumber -= +localOperationMemoryNumber;
+    } else if (MemoryPendingOperation === '*') {
+      MemoryCurrentNumber *= +localOperationMemoryNumber;
+    } else if (MemoryPendingOperation === '/') {
+      MemoryCurrentNumber /= +localOperationMemoryNumber;
+    } else {
+      MemoryCurrentNumber = +localOperationMemoryNumber;
+    }
+    displayBoard.value = MemoryCurrentNumber;
+    MemoryPendingOperation = operation;
   }
 }
