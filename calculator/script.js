@@ -18,7 +18,6 @@ for (let i = 0; i < numbersList.length; i++) {
 for (let i = 0; i < operationsList.length; i++) {
   let operationButton = operationsList[i];
   operationButton.addEventListener('click', function (evt) {
-    console.log(evt.currentTarget.id);
     operationPress(evt.target.textContent);
   });
 }
