@@ -8,17 +8,24 @@ let MemoryNewNumber = false;
 let MemoryPendingOperation = '';
 
 
-for (var i = 0; i < numbersList.length; i++) {
+for (let i = 0; i < numbersList.length; i++) {
   let numberButton = numbersList[i];
   numberButton.addEventListener('click', function (evt) {
     numberPress(evt.target.textContent);
   });
 }
 
-for (var i = 0; i < operationsList.length; i++) {
-  var operationButton = operationsList[i];
+for (let i = 0; i < operationsList.length; i++) {
+  let operationButton = operationsList[i];
   operationButton.addEventListener('click', function (evt) {
     operationPress(evt.target.textContent);
+  });
+}
+
+for (let i = 0; i < clearButtonsList.length; i++) {
+  let clearButton = clearButtonsList[i];
+  clearButton.addEventListener('click', function (evt) {
+    clear(evt.target.textContent);
   });
 }
 
@@ -55,5 +62,17 @@ function operationPress(operation) {
     }
     displayBoard.value = MemoryCurrentNumber;
     MemoryPendingOperation = operation;
+  }
+}
+
+function clear(id) {
+  if (id === 'ce') {
+    display.value = '0';
+    MemoryNewNumber = true;
+  } else if (id === 'c') {
+    display.value = '0';
+    MemoryNewNumber = true;
+    MemoryCurrentNumber = 0;
+    MemoryPendingOperation = '';
   }
 }
