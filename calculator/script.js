@@ -46,9 +46,18 @@ function numberPress(number) {
 
 function operationPress(operation) {
   let localOperationMemoryNumber = displayBoard.value;
+  console.log(MemoryPendingOperation);
 
   if (MemoryNewNumber && MemoryPendingOperation !== '=') {
     displayBoard.value = MemoryCurrentNumber;
+  } else if (operation === '√') {
+    if ( (+localOperationMemoryNumber) < 0) {
+      alert('Вы пытаетесь извлечь корень из отрицательного числа. Не надо так.');
+      displayBoard.value = +localOperationMemoryNumber;
+    } else {
+      MemoryCurrentNumber = Math.sqrt(+localOperationMemoryNumber);
+      displayBoard.value = MemoryCurrentNumber;
+    }
   } else {
     MemoryNewNumber = true;
     if (MemoryPendingOperation === '+') {
