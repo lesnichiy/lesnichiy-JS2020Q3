@@ -81,7 +81,12 @@ function operationPress(operation) {
       } else if (MemoryPendingOperation === '/') {
         MemoryCurrentNumber /= +localOperationMemoryNumber;
       } else if (MemoryPendingOperation === 'X^Y') {
-        MemoryCurrentNumber =  MemoryCurrentNumber ** (+localOperationMemoryNumber);
+        if ( MemoryCurrentNumber < 0 && (+localOperationMemoryNumber) === 0.5) {
+          alert('Вы пытаетесь извлечь корень из отрицательного числа. Не надо так.');
+          displayBoard.value = +localOperationMemoryNumber;
+        } else {
+          MemoryCurrentNumber =  MemoryCurrentNumber ** (+localOperationMemoryNumber);
+        }
       } else {
         MemoryCurrentNumber = +localOperationMemoryNumber;
       }
