@@ -33,11 +33,18 @@ decimalButton.addEventListener('click', decimal);
 
 function numberPress(number) {
   if (MemoryNewNumber) {
-    displayBoard.value = number;
-    MemoryNewNumber = false;
+    if (displayBoard.value === '-') {
+      displayBoard.value += number;
+    } else {
+      displayBoard.value = number;
+      MemoryNewNumber = false;
+    }
+
   } else {
     if (displayBoard.value === '0') {
       displayBoard.value = number;
+    } else if (displayBoard.value === '-') {
+      displayBoard.value += number;
     } else {
       displayBoard.value += number;
     }
@@ -46,37 +53,43 @@ function numberPress(number) {
 
 function operationPress(operation) {
   let localOperationMemoryNumber = displayBoard.value;
-  console.log(MemoryPendingOperation);
 
-  if (MemoryNewNumber && MemoryPendingOperation !== '=') {
-    displayBoard.value = MemoryCurrentNumber;
-  } else if (operation === '√') {
-    if ( (+localOperationMemoryNumber) < 0) {
-      alert('Вы пытаетесь извлечь корень из отрицательного числа. Не надо так.');
-      displayBoard.value = +localOperationMemoryNumber;
-    } else {
-      MemoryCurrentNumber = Math.sqrt(+localOperationMemoryNumber);
-      displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
-
-    }
+  if ( localOperationMemoryNumber === '0' && operation === '-') {
+    displayBoard.value = '-';
+  } else if (MemoryNewNumber && MemoryPendingOperation && operation === '-') {
+    displayBoard.value = '-';
+    MemoryNewNumber = false;
   } else {
-    MemoryNewNumber = true;
-    if (MemoryPendingOperation === '+') {
-      MemoryCurrentNumber += +localOperationMemoryNumber;
-    } else if (MemoryPendingOperation === '-') {
-      MemoryCurrentNumber -= +localOperationMemoryNumber;
-    } else if (MemoryPendingOperation === '*') {
-      MemoryCurrentNumber *= +localOperationMemoryNumber;
-    } else if (MemoryPendingOperation === '/') {
-      MemoryCurrentNumber /= +localOperationMemoryNumber;
-    } else if (MemoryPendingOperation === 'X^Y') {
-      MemoryCurrentNumber =  MemoryCurrentNumber ** (+localOperationMemoryNumber);
+    if (MemoryNewNumber && MemoryPendingOperation !== '=') {
+      displayBoard.value = MemoryCurrentNumber;
+    } else if (operation === '√') {
+      if ( (+localOperationMemoryNumber) < 0) {
+        alert('Вы пытаетесь извлечь корень из отрицательного числа. Не надо так.');
+        displayBoard.value = +localOperationMemoryNumber;
+      } else {
+        MemoryCurrentNumber = Math.sqrt(+localOperationMemoryNumber);
+        displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
+      }
     } else {
-      MemoryCurrentNumber = +localOperationMemoryNumber;
+      MemoryNewNumber = true;
+      if (MemoryPendingOperation === '+') {
+        MemoryCurrentNumber += +localOperationMemoryNumber;
+      } else if (MemoryPendingOperation === '-') {
+        MemoryCurrentNumber -= +localOperationMemoryNumber;
+      } else if (MemoryPendingOperation === '*') {
+        MemoryCurrentNumber *= +localOperationMemoryNumber;
+      } else if (MemoryPendingOperation === '/') {
+        MemoryCurrentNumber /= +localOperationMemoryNumber;
+      } else if (MemoryPendingOperation === 'X^Y') {
+        MemoryCurrentNumber =  MemoryCurrentNumber ** (+localOperationMemoryNumber);
+      } else {
+        MemoryCurrentNumber = +localOperationMemoryNumber;
+      }
+      displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
+      MemoryPendingOperation = operation;
     }
-    displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
-    MemoryPendingOperation = operation;
   }
+
 }
 
 function clear(id) {
@@ -85,7 +98,7 @@ function clear(id) {
     MemoryNewNumber = true;
   } else if (id === 'c') {
     displayBoard.value = '0';
-    MemoryNewNumber = true;
+    MemoryNewNumber = false;
     MemoryCurrentNumber = 0;
     MemoryPendingOperation = '';
   }
