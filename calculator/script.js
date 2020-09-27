@@ -56,7 +56,8 @@ function operationPress(operation) {
       displayBoard.value = +localOperationMemoryNumber;
     } else {
       MemoryCurrentNumber = Math.sqrt(+localOperationMemoryNumber);
-      displayBoard.value = MemoryCurrentNumber;
+      displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
+
     }
   } else {
     MemoryNewNumber = true;
@@ -73,7 +74,7 @@ function operationPress(operation) {
     } else {
       MemoryCurrentNumber = +localOperationMemoryNumber;
     }
-    displayBoard.value = MemoryCurrentNumber;
+    displayBoard.value = MemoryCurrentNumber.toFixed(10).replace(/0*$/,"").replace(/[.]$/,'');
     MemoryPendingOperation = operation;
   }
 }
