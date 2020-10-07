@@ -15,11 +15,25 @@ html {
   margin: 0 auto;
 }
 
+.shelter-button {
+  border: none;
+  border-radius: 100px;
+  padding: 15px 45px;
+  color: #292929;
+  background-color: #f1cdb3;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+/* ===== header ===== */
 .header {
   width: 100%;
-  background: url(../../assets/images/noise_transparent.png),
+  /* background: url(../../assets/images/noise_transparent.png),
               radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
-              #211F20; //временно
+              #211F20; */
 }
 
 .header-wrapper {
@@ -68,3 +82,51 @@ html {
 .site-menu-list-item-link--current {
   border-bottom: 3px solid #f1cdb3;
 }
+/* ===== / header ===== */
+
+/* ===== hero ===== */
+.main-page-hero {
+  width: 100%;
+  background: url(../../assets/images/noise_transparent.png),
+  radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
+  #211F20;
+}
+
+.main-page-hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 180px;
+}
+
+.main-page-hero-description {
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.main-page-hero-description-title {
+  max-width: 310px;
+  margin-bottom: 42px;
+  font-family: Georgia, serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 130%;
+  color: #ffffff;
+}
+
+.main-page-hero-description-text {
+  margin-bottom: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #cdcdcd;
+}
+
+.main-page-hero-picture {
+  display: block;
+  align-self: flex-end;
+}
+/* ===== / hero ===== */
