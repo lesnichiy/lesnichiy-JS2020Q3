@@ -10,6 +10,10 @@ html {
   padding: 0;
 }
 
+body {
+  position: relative;
+}
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -31,6 +35,8 @@ html {
 /* ===== header ===== */
 .header {
   width: 100%;
+  position: absolute;
+  top: 0;
   /* background: url(../../assets/images/noise_transparent.png),
               radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%),
               #211F20; */
@@ -40,22 +46,27 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 60px 0;
 }
 
 .header-logo-site-title {
+  margin-bottom: 10px;
   font-family: Georgia, serif;
   font-size: 32px;
   font-weight: 400;
   line-height: 110%;
   color: #f1cdb3;
+  letter-spacing: 0.06em;
+  text-align: center;
 }
 
 .header-logo-subtitle {
   font-family: Arial, sans-serif;
   font-size: 13px;
   font-weight: 400;
-  line-height: 110%;
+  letter-spacing: 0.1em;
   color: #ffffff;
+  text-align: center;
 }
 
 .site-menu-list {
@@ -104,6 +115,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 80px;
 }
 
 .main-page-hero-description-title {
