@@ -151,3 +151,42 @@ body {
   align-self: flex-end;
 }
 /* ===== / hero ===== */
+
+/* ===== about ===== */
+.main-paige-about-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.main-paige-about-picture {
+  display: block;
+  margin-right: 120px;
+}
+
+.main-paige-about-content {
+  max-width: 430px;
+}
+
+.main-paige-about-content-title {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-align: left;
+  color: #545454;
+  max-width: 370px;
+}
+
+.main-paige-about-content p {
+  margin-top: 25px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  text-align: left;
+  color: #4c4c4c;
+}
+/* ===== / about ===== */
