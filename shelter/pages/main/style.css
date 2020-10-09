@@ -19,6 +19,15 @@ body {
   margin: 0 auto;
 }
 
+.shelter-main-paige-h3 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
 .shelter-button {
   border: none;
   border-radius: 100px;
@@ -30,6 +39,7 @@ body {
   font-weight: 400;
   line-height: 130%;
   letter-spacing: 0.06em;
+  height: 52px;
 }
 
 .shelter-button:hover {
@@ -171,13 +181,7 @@ body {
 }
 
 .main-paige-about-content-title {
-  font-family: Georgia, serif;
-  font-size: 35px;
-  line-height: 45px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
   text-align: left;
-  color: #545454;
   max-width: 370px;
 }
 
@@ -190,3 +194,119 @@ body {
   color: #4c4c4c;
 }
 /* ===== / about ===== */
+
+/* ===== pets ===== */
+.main-paige-pets {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  background-color: #f6f6f6;
+}
+
+.main-paige-pets-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-paige-pets-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  max-width: 400px;
+  margin-bottom: 60px;
+}
+
+.main-paige-pets-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.main-paige-pets-slider-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 50%;
+  background: none;
+}
+
+.main-paige-pets-slider-button img {
+  display: block;
+}
+
+.main-paige-pets-slider-button--right {
+  transform: rotate(180deg);
+}
+
+.main-paige-pets-slider-button:hover {
+  cursor: pointer;
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+
+.main-paige-pets-slider-button:active {
+  outline: none;
+}
+
+.main-paige-pets-slider-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 990px;
+}
+
+.main-paige-pets-slider-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 9px;
+}
+
+.main-paige-pets-slider-card:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.main-paige-pets-slider-card-picture {
+  display: block;
+}
+
+.main-paige-pets-slider-card-name {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 23px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.main-paige-pets-slider-card-button {
+  border: 2px solid #f1cdb3;
+  background-color: transparent;
+  margin-bottom: 30px;
+  padding-left: 43px;
+  padding-right: 43px;
+}
+
+.main-paige-pets-slider-card-button:hover {
+  cursor: pointer;
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+
+.main-paige-pets-slider-card-button:active {
+  outline: none;
+}
+
+/* ===== / pets ===== */
