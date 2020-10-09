@@ -32,6 +32,15 @@ body {
   letter-spacing: 0.06em;
 }
 
+.shelter-button:hover {
+  background-color: #fddcc4;
+  cursor: pointer;
+}
+
+.shelter-button:active {
+  outline: none;
+}
+
 /* ===== header ===== */
 .header {
   width: 100%;
