@@ -76,6 +76,7 @@ body {
 }
 
 .site-menu-list-item-link--current {
+  color: #292929;
   border-bottom: 3px solid #f1cdb3;
 }
 /* ===== / header ===== */
