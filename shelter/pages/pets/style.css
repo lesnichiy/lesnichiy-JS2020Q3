@@ -10,7 +10,72 @@ html {
   padding: 0;
 }
 
+body {
+  position: relative;
+}
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
 }
+
+/* ===== header ===== */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.header-logo-site-title {
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 110%;
+  color: #545454;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.header-logo-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #292929;
+  text-align: center;
+}
+
+.site-menu-list {
+  list-style: none;
+  display: flex;
+  width: 443px;
+  justify-content: space-between;
+}
+
+.site-menu-list-item-link {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #545454;
+  text-decoration: none;
+}
+
+.site-menu-list-item-link:hover {
+  color: #292929;
+}
+
+.site-menu-list-item-link--current {
+  border-bottom: 3px solid #f1cdb3;
+}
+/* ===== / header ===== */
