@@ -278,6 +278,7 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 990px;
+  list-style: none;
 }
 
 .main-paige-pets-slider-card {
