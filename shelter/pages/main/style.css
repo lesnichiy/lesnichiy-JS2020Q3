@@ -31,7 +31,16 @@ body {
 .shelter-main-paige-h4 {
   font-family: Georgia, serif;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 115%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.shelter-main-paige-h5 {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  line-height: 110%;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: #545454;
@@ -359,3 +368,83 @@ body {
 }
 
 /* ===== / help ===== */
+
+/* ===== donation ===== */
+.main-page-donation {
+  background-color: #f6f6f6;
+  padding-top: 82px;
+  padding-bottom: 100px;
+}
+
+.main-paige-donation-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-paige-donation-picture {
+  display: block;
+  margin-right: 30px;
+}
+
+.main-paige-donation-content {
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.main-paige-donation-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.main-paige-donation-bank-name {
+  margin-bottom: 20px;
+}
+
+.main-paige-donation-button {
+  display: block;
+  text-decoration: none;
+  background-color: #f1cdb3;
+  padding: 10px 15px 10px 60px;
+  margin-bottom: 20px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  position: relative;
+}
+
+.main-paige-donation-button::before {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 23px;
+  background-image: url("../../assets/icons/credit-card.svg");
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  transition-duration: 0.5s;
+}
+
+.main-paige-donation-button:hover {
+  background-color: #fddcc4;
+}
+
+.main-paige-donation-button:hover::before {
+  transform: scale(1.1);
+}
+
+.main-paige-donation-info-text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+  font-style: italic;
+  color: #b2b2b2;
+}
+/* ===== / donation ===== */
