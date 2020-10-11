@@ -22,7 +22,7 @@ body {
 .shelter-main-paige-h3 {
   font-family: Georgia, serif;
   font-size: 35px;
-  line-height: 45px;
+  line-height: 130%;
   font-weight: 400;
   letter-spacing: 0.06em;
   color: #545454;
@@ -223,7 +223,6 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: left;
-  max-width: 400px;
   margin-bottom: 60px;
 }
 
@@ -315,3 +314,48 @@ body {
 }
 
 /* ===== / pets ===== */
+
+/* ===== help ===== */
+.main-paige-help-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.main-paige-help-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.main-paige-help-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  height: 281px;
+  list-style: none;
+}
+
+.main-paige-help-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.main-paige-help-list-item-icon {
+  display: block;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+
+/* ===== / help ===== */
