@@ -372,7 +372,7 @@ body {
 /* ===== donation ===== */
 .main-page-donation {
   background-color: #f6f6f6;
-  padding-top: 82px;
+  padding-top: 81px;
   padding-bottom: 100px;
 }
 
@@ -448,3 +448,66 @@ body {
   color: #b2b2b2;
 }
 /* ===== / donation ===== */
+
+/* ===== footer ===== */
+.footer {
+  padding-top: 40px;
+  background: url(../../assets/images/noise_transparent.png),
+              radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+              #211F20;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-contacts {
+  margin-top: 16px;
+  max-width: 280px;
+}
+
+.footer-contacts .footer-icon-and-text-wrapper {
+  margin-top: 40px;
+}
+
+.footer-address {
+  max-width: 302px;
+  margin-top: 16px;
+  margin-right: 160px;
+  margin-left: 160px;
+}
+
+.footer-address-boston {
+  margin-top: 34px;
+}
+
+.footer-address-london {
+  margin-top: 32px;
+}
+
+.footer-title {
+  color: #ffffff;
+}
+
+.footer-icon-and-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-icon-and-text-wrapper a {
+  display: block;
+  color: #f1cdb3;
+  text-decoration: none;
+}
+
+.footer-icon-and-text-wrapper a + a {
+  margin-left: 20px;
+}
+
+.footer-icon-and-text-wrapper img {
+  display: block;
+}
+/* ===== / footer ===== */
