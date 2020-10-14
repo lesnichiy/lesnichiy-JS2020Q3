@@ -49,8 +49,6 @@ function numberPress(number) {
       displayBoard.value += number;
     }
   }
-
-  console.log('numBerPress: MemoryCurrentNumber=' + MemoryCurrentNumber + ', MemoryNewNumber=' + MemoryNewNumber + ', MemoryPendingOperation=' + MemoryPendingOperation);
 }
 
 function operationPress(operation) {
@@ -58,7 +56,7 @@ function operationPress(operation) {
 
   if ( localOperationMemoryNumber === '0' && operation === '-') {
     displayBoard.value = '-';
-  } else if (MemoryNewNumber && MemoryPendingOperation && MemoryPendingOperation !== '=' && operation === '-') { //fix
+  } else if (MemoryNewNumber && MemoryPendingOperation && MemoryPendingOperation !== '=' && operation === '-') {
     displayBoard.value = '-';
     MemoryNewNumber = false;
   } else {
@@ -96,21 +94,16 @@ function operationPress(operation) {
       MemoryPendingOperation = operation;
     }
   }
-
-  console.log('operationPress: MemoryCurrentNumber=' + MemoryCurrentNumber + ', MemoryNewNumber=' + MemoryNewNumber + ', MemoryPendingOperation=' + MemoryPendingOperation);
 }
 
 function clear(id) {
   if (id === 'ce') {
     displayBoard.value = '0';
-  
-    console.log('clearCE: MemoryCurrentNumber=' + MemoryCurrentNumber + ', MemoryNewNumber=' + MemoryNewNumber + ', MemoryPendingOperation=' + MemoryPendingOperation);
   } else if (id === 'c') {
     displayBoard.value = '0';
     MemoryNewNumber = false;
     MemoryCurrentNumber = 0;
     MemoryPendingOperation = '';
-    console.log('clearC: MemoryCurrentNumber=' + MemoryCurrentNumber + ', MemoryNewNumber=' + MemoryNewNumber + ', MemoryPendingOperation=' + MemoryPendingOperation);
   }
 }
 
