@@ -103,7 +103,7 @@ function operationPress(operation) {
 function clear(id) {
   if (id === 'ce') {
     displayBoard.value = '0';
-    MemoryNewNumber = true;
+  
     console.log('clearCE: MemoryCurrentNumber=' + MemoryCurrentNumber + ', MemoryNewNumber=' + MemoryNewNumber + ', MemoryPendingOperation=' + MemoryPendingOperation);
   } else if (id === 'c') {
     displayBoard.value = '0';
