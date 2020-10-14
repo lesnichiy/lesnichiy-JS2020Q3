@@ -194,6 +194,71 @@ body {
 .pets-our-friends-card-button:active {
   outline: none;
 }
+
+.pets-our-friends-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.pets-our-friends-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 50%;
+  background: none;
+  transition-duration: 0.5s;
+}
+
+.pets-our-friends-nav-button + .pets-our-friends-nav-button {
+  margin-left: 20px;
+}
+
+.pets-our-friends-nav-button img {
+  display: block;
+}
+
+.pets-our-friends-nav-button--start {
+  transform: rotate(180deg);
+}
+.pets-our-friends-nav-button--end {
+}
+.pets-our-friends-nav-button--prev {
+  transform: rotate(180deg);
+}
+.pets-our-friends-nav-button--next {
+}
+.pets-our-friends-nav-button--current-page-num {
+  color: #292929;
+}
+
+.pets-our-friends-nav-button:hover {
+  cursor: pointer;
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+
+.pets-our-friends-nav-button:active {
+  outline: none;
+}
+
+.pets-our-friends-nav-button--disabled {
+  border: 2px solid #cdcdcd;
+  cursor: default;
+}
+.pets-our-friends-nav-button--disabled svg path {
+  fill: #cdcdcd;
+}
+.pets-our-friends-nav-button--disabled:hover {
+  cursor: default;
+  background-color: transparent;
+  border: 2px solid #cdcdcd;
+}
+
 /* ===== / pets-our-friends ===== */
 
 /* ===== footer ===== */
