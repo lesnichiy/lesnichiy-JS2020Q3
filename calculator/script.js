@@ -56,7 +56,7 @@ function operationPress(operation) {
 
   if ( localOperationMemoryNumber === '0' && operation === '-') {
     displayBoard.value = '-';
-  } else if (MemoryNewNumber && MemoryPendingOperation && operation === '-') {
+  } else if (MemoryNewNumber && MemoryPendingOperation && MemoryPendingOperation !== '=' && operation === '-') {
     displayBoard.value = '-';
     MemoryNewNumber = false;
   } else {
@@ -94,13 +94,11 @@ function operationPress(operation) {
       MemoryPendingOperation = operation;
     }
   }
-
 }
 
 function clear(id) {
   if (id === 'ce') {
     displayBoard.value = '0';
-    MemoryNewNumber = true;
   } else if (id === 'c') {
     displayBoard.value = '0';
     MemoryNewNumber = false;

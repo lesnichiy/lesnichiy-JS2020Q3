@@ -6,6 +6,26 @@ body {
   justify-content: center;
   padding-top: 40px;
 }
+.info {
+  width: 250px;
+  padding: 20px;
+  margin-left: 30px;
+  border-radius: 5px;
+  border: 1px solid #1d1d1d;
+  font-size: 18px;
+}
+.info h3 {
+  color: #1d1d1d;
+}
+.info p {
+  color: #2e2e2e;
+}
+
+.info li {
+  font-size: 18px;
+  color: #2e2e2e;
+}
+
 .calc {
   background-color: #1c93ee;
   width: 385px;
