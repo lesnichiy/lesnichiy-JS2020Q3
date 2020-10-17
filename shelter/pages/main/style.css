@@ -561,4 +561,22 @@ body {
   }
   /* ===== / about ===== */
 
+  /* ===== pets ===== */
+  .main-paige-pets-slider-cards {
+    justify-content: flex-start;
+    width: 580px;
+    overflow: hidden;
+  }
+  .main-paige-pets-slider-card {
+    flex-shrink: 0;
+  }
+
+  .main-paige-pets-slider-card + .main-paige-pets-slider-card {
+    margin-left: 40px;
+  }
+  /* ===== / pets ===== */
+
+  /* ===== help ===== */
+  
+  /* ===== / help ===== */
 }
