@@ -580,4 +580,21 @@ body {
     margin: 25px 30px 30px;
   }
   /* ===== / help ===== */
+
+  /* ===== donation ===== */
+  .main-paige-donation-wrapper {
+    flex-direction: column;
+  }
+
+  .main-paige-donation-picture {
+    margin-right: 0;
+    order: 1;
+  }
+
+  .main-paige-donation-content {
+    order: 0;
+    margin-bottom: 60px;
+  }
+  /* ===== / donation ===== */
+
 }
