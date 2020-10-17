@@ -348,7 +348,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
-  /*height: 281px;*/
   list-style: none;
 }
 
@@ -358,8 +357,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   margin: 25px 60px 30px;
-  /*margin-left: 60px;
-  margin-right: 60px;*/
 }
 
 .main-paige-help-list-item-icon {
@@ -578,6 +575,9 @@ body {
   /* ===== / pets ===== */
 
   /* ===== help ===== */
-
+  .main-paige-help-list-item {
+    width: 170px;
+    margin: 25px 30px 30px;
+  }
   /* ===== / help ===== */
 }
