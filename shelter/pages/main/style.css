@@ -14,6 +14,18 @@ body {
   position: relative;
 }
 
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
 .content-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -104,6 +116,17 @@ body {
   letter-spacing: 0.1em;
   color: #ffffff;
   text-align: center;
+}
+
+.header-site-menu-burger-button {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.header-site-menu-burger-button img {
+  display: block;
 }
 
 .site-menu-list {
