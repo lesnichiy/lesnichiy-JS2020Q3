@@ -782,4 +782,37 @@ body {
     max-width: 260px;
   }
   /* ===== / about ===== */
+
+  /* ===== pets ===== */
+  .main-paige-pets {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .main-paige-pets-title {
+    margin-bottom: 42px;
+  }
+
+  .main-paige-pets-slider {
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 270px;
+    margin-bottom: 42px;
+  }
+
+  .main-paige-pets-slider-cards {
+    order: 1;
+    margin-bottom: 20px;
+  }
+
+  .main-paige-pets-slider-button--left {
+    order: 2;
+  }
+
+  .main-paige-pets-slider-button--right {
+    order: 3;
+    margin-left: 80px;
+  }
+  /* ===== / pets ===== */
 }
