@@ -6,12 +6,20 @@ function openMobileMenu() {
   headerSiteMenu.classList.remove('header-site-menu--closed');
   headerSiteMenu.classList.add('header-site-menu--opened');
   headerLogo.classList.toggle('visually-hidden');
+  headerSiteMenu.addEventListener('click', listenerOverlay);
 }
 
 function closeMobileMenu() {
   headerSiteMenu.classList.remove('header-site-menu--opened');
   headerSiteMenu.classList.add('header-site-menu--closed');
   headerLogo.classList.toggle('visually-hidden');
+  headerSiteMenu.removeEventListener('click', listenerOverlay);
+}
+
+function listenerOverlay(evt) {
+  if (evt.target === headerSiteMenu) {
+    closeMobileMenu();
+  }
 }
 
 burgerButton.addEventListener('click', (evt) => {
