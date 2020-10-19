@@ -49,7 +49,7 @@ body {
   margin: 0 auto;
 }
 
-.shelter-main-paige-h3 {
+.shelter-main-page-h3 {
   font-family: Georgia, serif;
   font-size: 35px;
   line-height: 130%;
@@ -58,7 +58,7 @@ body {
   color: #545454;
 }
 
-.shelter-main-paige-h4 {
+.shelter-main-page-h4 {
   font-family: Georgia, serif;
   font-size: 20px;
   line-height: 115%;
@@ -67,7 +67,7 @@ body {
   color: #545454;
 }
 
-.shelter-main-paige-h5 {
+.shelter-main-page-h5 {
   font-family: Georgia, serif;
   font-size: 15px;
   line-height: 110%;
@@ -230,7 +230,7 @@ body {
 /* ===== / hero ===== */
 
 /* ===== about ===== */
-.main-paige-about-wrapper {
+.main-page-about-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,22 +238,22 @@ body {
   padding-bottom: 100px;
 }
 
-.main-paige-about-picture {
+.main-page-about-picture {
   display: block;
   margin-right: 120px;
 }
 
-.main-paige-about-content {
+.main-page-about-content {
   max-width: 430px;
 }
 
-.main-paige-about-content-title {
+.main-page-about-content-title {
   text-align: left;
   display: flex;
   flex-direction: column;
 }
 
-.main-paige-about-content p {
+.main-page-about-content p {
   margin-top: 25px;
   font-family: Arial, sans-serif;
   font-size: 15px;
@@ -264,27 +264,27 @@ body {
 /* ===== / about ===== */
 
 /* ===== pets ===== */
-.main-paige-pets {
+.main-page-pets {
   padding-top: 80px;
   padding-bottom: 100px;
   background-color: #f6f6f6;
 }
 
-.main-paige-pets-wrapper {
+.main-page-pets-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
 
-.main-paige-pets-title {
+.main-page-pets-title {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 60px;
 }
 
-.main-paige-pets-slider {
+.main-page-pets-slider {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -292,7 +292,7 @@ body {
   margin-bottom: 60px;
 }
 
-.main-paige-pets-slider-button {
+.main-page-pets-slider-button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -304,25 +304,25 @@ body {
   transition-duration: 0.5s;
 }
 
-.main-paige-pets-slider-button img {
+.main-page-pets-slider-button img {
   display: block;
 }
 
-.main-paige-pets-slider-button--right {
+.main-page-pets-slider-button--right {
   transform: rotate(180deg);
 }
 
-.main-paige-pets-slider-button:hover {
+.main-page-pets-slider-button:hover {
   cursor: pointer;
   background-color: #fddcc4;
   border: 2px solid #fddcc4;
 }
 
-.main-paige-pets-slider-button:active {
+.main-page-pets-slider-button:active {
   outline: none;
 }
 
-.main-paige-pets-slider-cards {
+.main-page-pets-slider-cards {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -330,7 +330,7 @@ body {
   list-style: none;
 }
 
-.main-paige-pets-slider-card {
+.main-page-pets-slider-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -341,41 +341,41 @@ body {
   transition-duration: 0.5s;
 }
 
-.main-paige-pets-slider-card:hover {
+.main-page-pets-slider-card:hover {
   background-color: #ffffff;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
-.main-paige-pets-slider-card-picture {
+.main-page-pets-slider-card-picture {
   display: block;
   width: 100%;
 }
 
-.main-paige-pets-slider-card-name {
+.main-page-pets-slider-card-name {
   margin-top: 30px;
   margin-bottom: 30px;
 }
 
-.main-paige-pets-slider-card-button {
+.main-page-pets-slider-card-button {
   background-color: transparent;
   margin-bottom: 30px;
   box-shadow: inset 0 0 0 2px #f1cdb3;
 }
 
-.main-paige-pets-slider-card-button:hover {
+.main-page-pets-slider-card-button:hover {
   cursor: pointer;
   box-shadow: inset 0 0 0 2px #fddcc4;
   background-color: #fddcc4;
 }
 
-.main-paige-pets-slider-card-button:active {
+.main-page-pets-slider-card-button:active {
   outline: none;
 }
 
 /* ===== / pets ===== */
 
 /* ===== help ===== */
-.main-paige-help-wrapper {
+.main-page-help-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -384,7 +384,7 @@ body {
   padding-bottom: 70px;
 }
 
-.main-paige-help-title {
+.main-page-help-title {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -392,7 +392,7 @@ body {
   margin-bottom: 35px;
 }
 
-.main-paige-help-list {
+.main-page-help-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -400,7 +400,7 @@ body {
   list-style: none;
 }
 
-.main-paige-help-list-item {
+.main-page-help-list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -408,7 +408,7 @@ body {
   margin: 25px 60px 30px;
 }
 
-.main-paige-help-list-item-icon {
+.main-page-help-list-item-icon {
   display: block;
   width: 60px;
   height: 60px;
@@ -424,18 +424,18 @@ body {
   padding-bottom: 100px;
 }
 
-.main-paige-donation-wrapper {
+.main-page-donation-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.main-paige-donation-picture {
+.main-page-donation-picture {
   display: block;
   margin-right: 30px;
 }
 
-.main-paige-donation-content {
+.main-page-donation-content {
   max-width: 380px;
   display: flex;
   flex-direction: column;
@@ -443,18 +443,18 @@ body {
   justify-content: flex-start;
 }
 
-.main-paige-donation-title {
+.main-page-donation-title {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 20px;
 }
 
-.main-paige-donation-bank-name {
+.main-page-donation-bank-name {
   margin-bottom: 20px;
 }
 
-.main-paige-donation-button {
+.main-page-donation-button {
   display: block;
   text-decoration: none;
   background-color: #f1cdb3;
@@ -466,7 +466,7 @@ body {
   position: relative;
 }
 
-.main-paige-donation-button::before {
+.main-page-donation-button::before {
   content: '';
   display: block;
   width: 30px;
@@ -479,15 +479,15 @@ body {
   transition-duration: 0.5s;
 }
 
-.main-paige-donation-button:hover {
+.main-page-donation-button:hover {
   background-color: #fddcc4;
 }
 
-.main-paige-donation-button:hover::before {
+.main-page-donation-button:hover::before {
   transform: scale(1.1);
 }
 
-.main-paige-donation-info-text {
+.main-page-donation-info-text {
   font-family: Arial, sans-serif;
   font-size: 12px;
   line-height: 18px;
@@ -597,54 +597,54 @@ body {
   /* ===== / hero ===== */
 
   /* ===== about ===== */
-  .main-paige-about-wrapper {
+  .main-page-about-wrapper {
     flex-direction: column;
   }
 
-  .main-paige-about-picture {
+  .main-page-about-picture {
     order: 1;
     margin-right: 0;
   }
 
-  .main-paige-about-content {
+  .main-page-about-content {
     order: 0;
     margin-bottom: 80px;
   }
   /* ===== / about ===== */
 
   /* ===== pets ===== */
-  .main-paige-pets-slider-cards {
+  .main-page-pets-slider-cards {
     justify-content: flex-start;
     width: 580px;
     overflow: hidden;
   }
-  .main-paige-pets-slider-card {
+  .main-page-pets-slider-card {
     flex-shrink: 0;
   }
 
-  .main-paige-pets-slider-card + .main-paige-pets-slider-card {
+  .main-page-pets-slider-card + .main-page-pets-slider-card {
     margin-left: 40px;
   }
   /* ===== / pets ===== */
 
   /* ===== help ===== */
-  .main-paige-help-list-item {
+  .main-page-help-list-item {
     width: 170px;
     margin: 25px 30px 30px;
   }
   /* ===== / help ===== */
 
   /* ===== donation ===== */
-  .main-paige-donation-wrapper {
+  .main-page-donation-wrapper {
     flex-direction: column;
   }
 
-  .main-paige-donation-picture {
+  .main-page-donation-picture {
     margin-right: 0;
     order: 1;
   }
 
-  .main-paige-donation-content {
+  .main-page-donation-content {
     order: 0;
     margin-bottom: 60px;
   }
@@ -676,7 +676,7 @@ body {
     max-width: 300px;
   }
 
-  .shelter-main-paige-h3 {
+  .shelter-main-page-h3 {
     font-size: 25px;
   }
 
@@ -755,45 +755,45 @@ body {
   /* ===== / hero ===== */
 
   /* ===== about ===== */
-  .main-paige-about-wrapper {
+  .main-page-about-wrapper {
     padding-top: 42px;
     padding-bottom: 42px;
   }
 
-  .main-paige-about-content {
+  .main-page-about-content {
     max-width: 300px;
     margin-bottom: 42px;
   }
 
-  .main-paige-about-content-title {
+  .main-page-about-content-title {
     align-items: center;
   }
 
-  .main-paige-about-content p {
+  .main-page-about-content p {
     max-width: 270px;
     text-align: justify;
   }
 
-  .main-paige-about-content p + p {
+  .main-page-about-content p + p {
     margin-top: 22px;
   }
 
-  .main-paige-about-picture {
+  .main-page-about-picture {
     max-width: 260px;
   }
   /* ===== / about ===== */
 
   /* ===== pets ===== */
-  .main-paige-pets {
+  .main-page-pets {
     padding-top: 42px;
     padding-bottom: 42px;
   }
 
-  .main-paige-pets-title {
+  .main-page-pets-title {
     margin-bottom: 42px;
   }
 
-  .main-paige-pets-slider {
+  .main-page-pets-slider {
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -801,49 +801,88 @@ body {
     margin-bottom: 42px;
   }
 
-  .main-paige-pets-slider-cards {
+  .main-page-pets-slider-cards {
     order: 1;
     margin-bottom: 20px;
   }
 
-  .main-paige-pets-slider-button--left {
+  .main-page-pets-slider-button--left {
     order: 2;
   }
 
-  .main-paige-pets-slider-button--right {
+  .main-page-pets-slider-button--right {
     order: 3;
     margin-left: 80px;
   }
   /* ===== / pets ===== */
 
   /* ===== help ===== */
-  .main-paige-help-wrapper {
+  .main-page-help-wrapper {
     padding-top: 42px;
     padding-bottom: 42px;
   }
 
-  .main-paige-help-title {
+  .main-page-help-title {
     margin-bottom: 12px;
   }
 
-  .main-paige-help-list {
+  .main-page-help-list {
     width: 320px;
     justify-content: space-between;
   }
 
-  .main-paige-help-list-item {
+  .main-page-help-list-item {
     width: 130px;
     margin: 30px 15px 0px;
   }
 
-  .main-paige-help-list-item-icon {
+  .main-page-help-list-item-icon {
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
   }
 
-  .main-paige-help-list-item-title {
+  .main-page-help-list-item-title {
     font-size: 15px;
   }
   /* ===== / help ===== */
+
+  /* ===== donation ===== */
+  .main-page-donation {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .main-page-donation-wrapper {
+
+  }
+
+  .main-page-donation-picture {
+    max-width: 260px;
+  }
+
+  .main-page-donation-content {
+    margin-bottom: 42px;
+    align-items: center;
+  }
+
+  .main-page-donation-title {
+    align-items: center;
+  }
+
+  .main-page-donation-bank-name {
+    letter-spacing: 0;
+    line-height: 160%;
+  }
+
+  .main-page-donation-button {
+    font-size: 15px;
+    padding: 13px 15px 13px 60px;
+  }
+
+  .main-page-donation-info-text {
+    max-width: 280px;
+    text-align: justify;
+  }
+  /* ===== / donation ===== */
 }
