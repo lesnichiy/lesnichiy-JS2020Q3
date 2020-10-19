@@ -249,7 +249,8 @@ body {
 
 .main-paige-about-content-title {
   text-align: left;
-  max-width: 370px;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-paige-about-content p {
@@ -675,6 +676,10 @@ body {
     max-width: 300px;
   }
 
+  .shelter-main-paige-h3 {
+    font-size: 25px;
+  }
+
   /* ===== header ===== */
   .header-logo-burger-wrapper {
     justify-content: space-between;
@@ -748,4 +753,33 @@ body {
     max-width: 260px;
   }
   /* ===== / hero ===== */
+
+  /* ===== about ===== */
+  .main-paige-about-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .main-paige-about-content {
+    max-width: 300px;
+    margin-bottom: 42px;
+  }
+
+  .main-paige-about-content-title {
+    align-items: center;
+  }
+
+  .main-paige-about-content p {
+    max-width: 270px;
+    text-align: justify;
+  }
+
+  .main-paige-about-content p + p {
+    margin-top: 22px;
+  }
+
+  .main-paige-about-picture {
+    max-width: 260px;
+  }
+  /* ===== / about ===== */
 }
