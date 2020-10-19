@@ -133,6 +133,11 @@ body {
   cursor: pointer;
 }
 
+.header-site-menu-burger-button:active,
+.header-site-menu-burger-button:focus {
+  outline: none;
+}
+
 .header-site-menu-burger-button img {
   display: block;
 }
