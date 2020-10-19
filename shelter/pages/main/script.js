@@ -6,17 +6,17 @@ function openMobileMenu() {
   headerSiteMenu.classList.remove('header-site-menu--closed');
   headerSiteMenu.classList.add('header-site-menu--opened');
   headerLogo.classList.toggle('visually-hidden');
-  headerSiteMenu.addEventListener('click', listenerOverlay);
+  headerSiteMenu.addEventListener('click', closeMobileMenuByClickOnOverlay);
 }
 
 function closeMobileMenu() {
   headerSiteMenu.classList.remove('header-site-menu--opened');
   headerSiteMenu.classList.add('header-site-menu--closed');
   headerLogo.classList.toggle('visually-hidden');
-  headerSiteMenu.removeEventListener('click', listenerOverlay);
+  headerSiteMenu.removeEventListener('click', closeMobileMenuByClickOnOverlay);
 }
 
-function listenerOverlay(evt) {
+function closeMobileMenuByClickOnOverlay(evt) {
   if (evt.target === headerSiteMenu) {
     closeMobileMenu();
   }
