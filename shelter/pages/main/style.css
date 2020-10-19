@@ -815,4 +815,35 @@ body {
     margin-left: 80px;
   }
   /* ===== / pets ===== */
+
+  /* ===== help ===== */
+  .main-paige-help-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .main-paige-help-title {
+    margin-bottom: 12px;
+  }
+
+  .main-paige-help-list {
+    width: 320px;
+    justify-content: space-between;
+  }
+
+  .main-paige-help-list-item {
+    width: 130px;
+    margin: 30px 15px 0px;
+  }
+
+  .main-paige-help-list-item-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+
+  .main-paige-help-list-item-title {
+    font-size: 15px;
+  }
+  /* ===== / help ===== */
 }
