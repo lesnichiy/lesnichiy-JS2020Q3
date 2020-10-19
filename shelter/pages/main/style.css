@@ -885,4 +885,47 @@ body {
     text-align: justify;
   }
   /* ===== / donation ===== */
+
+  /* ===== footer ===== */
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .footer-contacts,
+  .footer-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+  }
+
+  .footer-contacts {
+    margin-bottom: 40px;
+  }
+
+  .footer-address-boston,
+  .footer-address-london {
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  .footer-address-boston a:last-child,
+  .footer-address-london a:last-child {
+    flex-grow: 1;
+  }
+
+  .footer-title {
+    text-align: center;
+    max-width: 270px;
+  }
+
+  .footer-picture {
+    max-width: 260px;
+    margin-top: 42px;
+  }
+  /* ===== / footer ===== */
+
 }
