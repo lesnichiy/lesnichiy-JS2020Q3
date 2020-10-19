@@ -685,11 +685,7 @@ body {
 
   /* ===== header ===== */
   .header-wrapper {
-    justify-content: flex-start;
-  }
-
-  .header-logo {
-    margin-right: 41px;
+    justify-content: space-between;
   }
 
   .header-site-menu--opened {
@@ -766,6 +762,7 @@ body {
   .header-site-menu--closed .header-site-menu-burger-button {
     transform: rotate(0deg);
     transition-delay: 0.4s;
+    margin-right: 40px;
   }
 
   .header-site-menu--closed .site-menu-list {
