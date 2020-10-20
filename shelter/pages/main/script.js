@@ -1,6 +1,7 @@
 const burgerButton = document.querySelector('.header-site-menu-burger-button');
 const headerInnerWrapper = document.querySelector('.header-inner-wrapper');
 const headerSiteMenuNav = document.querySelector('.header-site-menu');
+const body = document.querySelector('body');
 
 function openMobileMenu() {
   headerWrapper.classList.remove('header--closed');
@@ -25,5 +26,5 @@ burgerButton.addEventListener('click', (evt) => {
   burgerButton.classList.toggle('header-site-menu-burger-button--opened');
   headerInnerWrapper.classList.toggle('header-inner-wrapper--opened');
   headerSiteMenuNav.classList.toggle('header-site-menu--opened');
-
+  body.classList.toggle('scroll-hidden');
 });
