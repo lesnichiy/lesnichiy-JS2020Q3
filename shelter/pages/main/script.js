@@ -1,31 +1,29 @@
-const burgerButton = document.querySelector('.header-site-menu-burger-button--open');
-const burgerButtonClose = document.querySelector('.header-site-menu-burger-button--close');
-const headerSiteMenu = document.querySelector('.header-site-menu');
+const burgerButton = document.querySelector('.header-site-menu-burger-button');
+const headerInnerWrapper = document.querySelector('.header-inner-wrapper');
+const headerSiteMenuNav = document.querySelector('.header-site-menu');
 
 function openMobileMenu() {
-  headerSiteMenu.classList.remove('header-site-menu--closed');
-  headerSiteMenu.classList.add('header-site-menu--opened');
-  headerSiteMenu.addEventListener('click', closeMobileMenuByClickOnOverlay);
+  headerWrapper.classList.remove('header--closed');
+  headerWrapper.classList.add('header--opened');
+  //header.addEventListener('click', closeMobileMenuByClickOnOverlay);
 }
 
 function closeMobileMenu() {
-  headerSiteMenu.classList.remove('header-site-menu--opened');
-  headerSiteMenu.classList.add('header-site-menu--closed');
-  headerSiteMenu.removeEventListener('click', closeMobileMenuByClickOnOverlay);
+  headerWrapper.classList.remove('header--opened');
+  headerWrapper.classList.add('header--closed');
+  //header.removeEventListener('click', closeMobileMenuByClickOnOverlay);
 }
 
 function closeMobileMenuByClickOnOverlay(evt) {
-  if (evt.target === headerSiteMenu) {
+  if (evt.target === header) {
     closeMobileMenu();
   }
 }
 
 burgerButton.addEventListener('click', (evt) => {
   evt.preventDefault();
-  if (headerSiteMenu.classList.contains('header-site-menu--closed')) {
-    openMobileMenu();
-  } else if (headerSiteMenu.classList.contains('header-site-menu--opened')) {
-    closeMobileMenu();
-  }
+  burgerButton.classList.toggle('header-site-menu-burger-button--opened');
+  headerInnerWrapper.classList.toggle('header-inner-wrapper--opened');
+  headerSiteMenuNav.classList.toggle('header-site-menu--opened');
 
 });
