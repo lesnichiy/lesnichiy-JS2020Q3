@@ -84,7 +84,7 @@ body {
 
 .header-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -451,7 +451,7 @@ body {
     padding-bottom: 30px;
   }
 
-  .header-logo {
+  .header-logo-link {
     z-index: 100;
   }
 
@@ -474,7 +474,7 @@ body {
     top: 0;
     right: -320px;
     z-index: 50;
-    background-color: #292929;
+    background-color: #ffffff;
     transition-property: transform;
     transition-duration: 0.6s;
   }
