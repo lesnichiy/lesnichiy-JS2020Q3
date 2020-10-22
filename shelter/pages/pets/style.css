@@ -350,6 +350,10 @@ body {
   /* ===== / header ===== */
 
   /* ===== pets-our-friends ===== */
+  .pets-our-friends {
+    padding-bottom: 76px;
+  }
+
   .pets-our-friends-title {
     margin-bottom: 15px;
   }
@@ -366,6 +370,25 @@ body {
   }
   /* ===== / pets-our-friends ===== */
 
+  /* ===== footer ===== */
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-contacts,
+  .footer-address {
+    margin: 0 30px 0;
+  }
+
+  .footer-picture {
+    margin-top: 65px;
+  }
+  /* ===== / footer ===== */
 }
 
 @media (max-width: 767px) {
