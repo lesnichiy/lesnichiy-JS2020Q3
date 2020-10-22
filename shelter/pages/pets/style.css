@@ -161,8 +161,11 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-around;
+  align-content: flex-start;
   list-style: none;
+  max-width: 1200px;
+  max-height: 930px;
+  overflow-y: hidden;
 }
 
 .pets-our-friends-card {
@@ -345,6 +348,24 @@ body {
   /* ===== header ===== */
 
   /* ===== / header ===== */
+
+  /* ===== pets-our-friends ===== */
+  .pets-our-friends-title {
+    margin-bottom: 15px;
+  }
+
+  .pets-our-friends-cards {
+    max-width: 708px;
+    max-height: 1395px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .pets-our-friends-nav {
+    margin-top: 25px;
+  }
+  /* ===== / pets-our-friends ===== */
+
 }
 
 @media (max-width: 767px) {
