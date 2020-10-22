@@ -33,7 +33,7 @@ body {
   padding-right: 40px;
 }
 
-.shelter-main-paige-h3 {
+.shelter-main-page-h3 {
   font-family: Georgia, serif;
   font-size: 35px;
   line-height: 130%;
@@ -42,7 +42,7 @@ body {
   color: #545454;
 }
 
-.shelter-main-paige-h4 {
+.shelter-main-page-h4 {
   font-family: Georgia, serif;
   font-size: 20px;
   line-height: 115%;
@@ -277,8 +277,8 @@ body {
 }
 
 .pets-our-friends-nav-button + .pets-our-friends-nav-button {
-  margin-left: 20px;
-}
+   margin-left: 20px;
+ }
 
 .pets-our-friends-nav-button img {
   display: block;
@@ -445,6 +445,10 @@ body {
     padding-right: 10px;
   }
 
+  .shelter-main-page-h3 {
+    font-size: 25px;
+  }
+
   /* ===== header ===== */
   .header-wrapper {
     padding-top: 30px;
@@ -515,5 +519,31 @@ body {
     background-color: rgba(41, 41, 41, 0.6);
   }
   /* ===== / header ===== */
+
+  /* ===== pets-our-friends ===== */
+  .pets-our-friends {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .pets-our-friends-title {
+    margin-bottom: 27px;
+  }
+
+  .pets-our-friends-cards {
+    max-width: 270px;
+    max-height: 1395px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .pets-our-friends-nav {
+    margin-top: 27px;
+  }
+
+  .pets-our-friends-nav-button + .pets-our-friends-nav-button {
+    margin-left: 10px;
+  }
+  /* ===== / pets-our-friends ===== */
 
 }
