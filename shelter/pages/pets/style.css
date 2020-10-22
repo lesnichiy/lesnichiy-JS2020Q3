@@ -95,6 +95,11 @@ body {
   text-align: center;
 }
 
+.header-logo-link {
+  text-decoration: none;
+  display: block;
+}
+
 .site-menu-list {
   list-style: none;
   display: flex;
