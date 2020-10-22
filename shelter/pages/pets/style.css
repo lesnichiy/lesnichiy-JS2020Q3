@@ -125,6 +125,12 @@ body {
   color: #292929;
   border-bottom: 3px solid #f1cdb3;
 }
+
+.site-menu-list-item-link--not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
 /* ===== / header ===== */
 
 /* ===== pets-our-friends ===== */
