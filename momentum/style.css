@@ -13,6 +13,8 @@ body {
   text-align: center;
   height: 100vh;
   color: #000000;
+  background-size: cover;
+  background-position: center;
 }
 
 #time {
