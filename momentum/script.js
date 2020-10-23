@@ -10,16 +10,11 @@ const overlay = document.querySelector('.overlay');
 //Show Time
 function showTime() {
   let today = new Date();
-  let hour = today.getHours();
-  let min = today.getMinutes();
-  let sec = today.getSeconds();
+  let hours = today.getHours();
+  let minutes = today.getMinutes();
+  let seconds = today.getSeconds();
 
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-
-  //12hr Format
-  hour = hour % 12 || 12;
-
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}<span>:</span>${addZero(sec)}`;
+  time.innerHTML = `${addZero(hours)}<span>:</span>${addZero(minutes)}<span>:</span>${addZero(seconds)}`;
 
   setTimeout(showTime, 1000)
 }
@@ -36,7 +31,7 @@ function setBgAndGreeting() {
 
   if (hour < 6) {
     //Night
-    document.body.style.backgroundImage = `url(assets/images/night/8.jpg)`;
+    document.body.style.backgroundImage = `url(assets/images/night/08.jpg)`;
     greeting.textContent = 'Good Night';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
     overlay.style.backgroundColor = COLOR_PRIMARY;
