@@ -1,6 +1,7 @@
 const COLOR_PRIMARY = '#000000';
 const COLOR_PRIMARY_CONTRAST = '#ffffff';
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 const timeElem = document.querySelector('#time');
 const dayElem = document.querySelector('#day')
@@ -16,8 +17,11 @@ function showTime() {
   let minutes = today.getMinutes();
   let seconds = today.getSeconds();
   let day = today.getDay();
+  let date = today.getDate();
+  let month = today.getMonth();
 
   timeElem.innerHTML = `${addZero(hours)}<span>:</span>${addZero(minutes)}<span>:</span>${addZero(seconds)}`;
+  dayElem.innerHTML = `${DAYS[day]}, ${date} ${MONTHS[month]}`;
 
 
   setTimeout(showTime, 1000)
