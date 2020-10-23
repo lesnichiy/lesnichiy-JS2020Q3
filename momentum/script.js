@@ -56,6 +56,25 @@ function setBgAndGreeting() {
   }
 }
 
+//Get Name from localStorage
+function getName() {
+  if (localStorage.getItem('name') === null) {
+    name.textContent = '[Enter Your Name Here]';
+  } else {
+    name.textContent = localStorage.getItem('name');
+  }
+}
+
+//Get Focus from localStorage
+function getFocus() {
+  if (localStorage.getItem('focus') === null) {
+    focus.textContent = '[Enter Your Focus For Today Here]';
+  } else {
+    focus.textContent = localStorage.getItem('focus');
+  }
+}
 
 showTime();
 setBgAndGreeting();
+getName();
+getFocus();
