@@ -31,7 +31,7 @@ function setBgAndGreeting() {
 
   if (hour < 6) {
     //Night
-    document.body.style.backgroundImage = `url(assets/images/night/08.jpg)`;
+    document.body.style.backgroundImage = `url(assets/images/night/02.jpg)`;
     greeting.textContent = 'Good Night';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
     overlay.style.backgroundColor = COLOR_PRIMARY;
@@ -65,6 +65,18 @@ function getName() {
   }
 }
 
+//Set Name to localStorage
+function setName(evt) {
+  if (evt.type === 'keypress') {
+    if (evt.which === 13 || evt.keyCode === 13) {
+      localStorage.setItem('name', evt.target.innerText);
+      name.blur();
+    }
+  } else {
+    localStorage.setItem('name', evt.target.innerText);
+  }
+}
+
 //Get Focus from localStorage
 function getFocus() {
   if (localStorage.getItem('focus') === null) {
@@ -73,6 +85,25 @@ function getFocus() {
     focus.textContent = localStorage.getItem('focus');
   }
 }
+
+//Set Focus to localStorage
+function setFocus(evt) {
+  if (evt.type === 'keypress') {
+    if (evt.which === 13 || evt.keyCode === 13) {
+      localStorage.setItem('focus', evt.target.innerText);
+      focus.blur();
+    }
+  } else {
+    localStorage.setItem('focus', evt.target.innerText);
+  }
+}
+
+name.addEventListener('keypress', setName);
+name.addEventListener('blur', setName);
+focus.addEventListener('keypress', setFocus);
+focus.addEventListener('blur', setFocus);
+
+
 
 showTime();
 setBgAndGreeting();
