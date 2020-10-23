@@ -2,6 +2,7 @@ const time = document.querySelector('#time');
 const greeting = document.querySelector('#greeting');
 const name = document.querySelector('#name');
 const focus = document.querySelector('#focus');
+const overlay = document.querySelector('.overlay');
 
 //Show Time
 function showTime() {
@@ -34,6 +35,8 @@ function setBgAndGreeting() {
     //Night
     document.body.style.backgroundImage = `url(assets/images/night/01.jpg)`;
     greeting.textContent = 'Good Night';
+    document.body.style.color = '#ffffff';
+    overlay.style.backgroundColor = '#000000';
   } else if (hour < 12) {
     //Morning
     document.body.style.backgroundImage = `url(assets/images/morning/01.jpg)`;
@@ -46,6 +49,8 @@ function setBgAndGreeting() {
     //Evening
     document.body.style.backgroundImage = `url(assets/images/evening/01.jpg)`;
     greeting.textContent = 'Good Evening';
+    document.body.style.color = '#ffffff';
+    overlay.style.backgroundColor = '#000000';
   }
 }
 

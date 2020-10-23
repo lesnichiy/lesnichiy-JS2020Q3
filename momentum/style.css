@@ -6,15 +6,35 @@
 
 body {
   font-family: 'Quicksand', sans-serif;
+  color: #000000;
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   height: 100vh;
-  color: #000000;
-  background-size: cover;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-image: url("assets/images/overlay.png");
   background-position: center;
+  background-size: cover;*/
+  background-color: white;
+  opacity: 0.3;
+  z-index: 5;
 }
 
 #time {
