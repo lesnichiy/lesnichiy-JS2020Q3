@@ -77,11 +77,20 @@ function getName() {
 function setName(evt) {
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
-      localStorage.setItem('name', evt.target.innerText);
-      nameElem.blur();
+      if (evt.target.innerText === '') {
+        nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
+        nameElem.blur();
+      } else {
+        localStorage.setItem('name', evt.target.innerText);
+        nameElem.blur();
+      }
     }
   } else {
-    localStorage.setItem('name', evt.target.innerText);
+    if (evt.target.innerText === '') {
+      nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
+    } else {
+      localStorage.setItem('name', evt.target.innerText);
+    }
   }
 }
 
@@ -106,6 +115,7 @@ function setFocus(evt) {
   }
 }
 
+nameElem.addEventListener('click', (evt) => evt.target.textContent = '')
 nameElem.addEventListener('keypress', setName);
 nameElem.addEventListener('blur', setName);
 focusElem.addEventListener('keypress', setFocus);
