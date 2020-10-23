@@ -107,17 +107,27 @@ function getFocus() {
 function setFocus(evt) {
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
-      localStorage.setItem('focus', evt.target.innerText);
-      focusElem.blur();
+      if (evt.target.innerText === '') {
+        focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
+        focusElem.blur();
+      } else {
+        localStorage.setItem('focus', evt.target.innerText);
+        focusElem.blur();
+      }
     }
   } else {
-    localStorage.setItem('focus', evt.target.innerText);
+    if (evt.target.innerText === '') {
+      focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
+    } else {
+      localStorage.setItem('focus', evt.target.innerText);
+    }
   }
 }
 
-nameElem.addEventListener('click', (evt) => evt.target.textContent = '')
+nameElem.addEventListener('click', (evt) => evt.target.textContent = '');
 nameElem.addEventListener('keypress', setName);
 nameElem.addEventListener('blur', setName);
+focusElem.addEventListener('click', (evt) => evt.target.textContent = '');
 focusElem.addEventListener('keypress', setFocus);
 focusElem.addEventListener('blur', setFocus);
 
