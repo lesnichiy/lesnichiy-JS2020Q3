@@ -37,15 +37,18 @@ body {
   z-index: 5;
 }
 
+#day {
+}
+
 #time {
   font-size: 8rem;
 }
 
-h1 {
+.greeting-title {
   margin-bottom: 3rem;
 }
 
-h2 {
+.focus-title {
   margin-bottom: 0.5rem;
   opacity: 0.8;
 }
