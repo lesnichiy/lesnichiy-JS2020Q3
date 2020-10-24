@@ -56,18 +56,39 @@ function createBgImgDayArrURLs() {
 
     if (i < 6) {
       //Night
-      resultArr.push(`${BASE_BG_IMG_URL}night/${imgRandName}`);
+      let currentNightImg = `${BASE_BG_IMG_URL}night/${imgRandName}`;
+      if (resultArr.includes(currentNightImg)) {
+        i--;
+      } else  {
+        resultArr.push(currentNightImg);
+      }
     } else if (i < 12) {
       //Morning
-      resultArr.push(`${BASE_BG_IMG_URL}morning/${imgRandName}`);
+      let currentMorningImg = `${BASE_BG_IMG_URL}morning/${imgRandName}`;
+      if (resultArr.includes(currentMorningImg)) {
+        i--;
+      } else  {
+        resultArr.push(currentMorningImg);
+      }
     } else if (i < 18) {
       //day
-      resultArr.push(`${BASE_BG_IMG_URL}day/${imgRandName}`);
+      let currentDayImg = `${BASE_BG_IMG_URL}day/${imgRandName}`;
+      if (resultArr.includes(currentDayImg)) {
+        i--;
+      } else  {
+        resultArr.push(currentDayImg);
+      }
     } else {
       //Evening
-      resultArr.push(`${BASE_BG_IMG_URL}evening/${imgRandName}`);
+      let currentEveningImg = `${BASE_BG_IMG_URL}evening/${imgRandName}`;
+      if (resultArr.includes(currentEveningImg)) {
+        i--;
+      } else  {
+        resultArr.push(currentEveningImg);
+      }
     }
   }
+  console.log(resultArr);
 
   return resultArr;
 }
