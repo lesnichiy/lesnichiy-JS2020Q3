@@ -88,7 +88,6 @@ function createBgImgDayArrURLs() {
       }
     }
   }
-  console.log(resultArr);
 
   return resultArr;
 }
@@ -157,21 +156,29 @@ function getName() {
 
 //Set Name to localStorage
 function setName(evt) {
+  if (evt.type === 'click') {
+    nameElem.textContent = '';
+  }
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
-      if (evt.target.innerText === '') {
+      if (nameElem.textContent === '') {
+        if (localStorage.getItem('name')) {
+          nameElem.textContent = localStorage.getItem('name');
+        } else {
+          nameElem.textContent = '[Enter Your Name Here]';
+        }
         nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
-        nameElem.blur();
       } else {
-        localStorage.setItem('name', evt.target.innerText);
-        nameElem.blur();
+        localStorage.setItem('name', nameElem.textContent);
       }
+      nameElem.blur();
     }
-  } else {
-    if (evt.target.innerText === '') {
+  }
+  if (evt.type === 'blur') {
+    if (nameElem.textContent === '') {
       nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
     } else {
-      localStorage.setItem('name', evt.target.innerText);
+      localStorage.setItem('name', nameElem.textContent);
     }
   }
 }
@@ -187,31 +194,34 @@ function getFocus() {
 
 //Set Focus to localStorage
 function setFocus(evt) {
+  if (evt.type === 'click') {
+    focusElem.textContent = '';
+  }
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
-      if (evt.target.innerText === '') {
+      if (focusElem.textContent === '') {
         focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
-        focusElem.blur();
       } else {
-        localStorage.setItem('focus', evt.target.innerText);
-        focusElem.blur();
+        localStorage.setItem('focus', focusElem.textContent);
       }
+      focusElem.blur();
     }
-  } else {
-    if (evt.target.innerText === '') {
+  }
+  if (evt.type === 'blur') {
+    if (focusElem.textContent === '') {
       focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
     } else {
-      localStorage.setItem('focus', evt.target.innerText);
+      localStorage.setItem('focus', focusElem.textContent);
     }
   }
 }
 
 
 //Event Listeners of Name and Focus
-nameElem.addEventListener('click', (evt) => evt.target.textContent = '');
+nameElem.addEventListener('click', setName);
 nameElem.addEventListener('keypress', setName);
 nameElem.addEventListener('blur', setName);
-focusElem.addEventListener('click', (evt) => evt.target.textContent = '');
+focusElem.addEventListener('click', setFocus);
 focusElem.addEventListener('keypress', setFocus);
 focusElem.addEventListener('blur', setFocus);
 
