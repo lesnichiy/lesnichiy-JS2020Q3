@@ -26,6 +26,7 @@ function showTime() {
 
   if ( minutes === 0 && seconds === 0) {
     setBgAndGreeting();
+    getWeather();
   }
 
 
@@ -248,23 +249,45 @@ const weatherTemperatureElem = document.querySelector('.weather-temperature');
 const weatherHumidityElem = document.querySelector('.weather-humidity');
 const weatherWindSpeedElem = document.querySelector('.weather-wind-speed');
 
-
 const openWeatherApiKey = `4d7e149d43676736e640d174434d7fc9`;
 let openWeatherLang = `en`;
 let openWeatherUnitsType = `metric`;
-let city = getCity();
 
 function getCity() {
-  return weatherCityElem.textContent;
+  if (localStorage.getItem('city') === null) {
+    weatherCityElem.textContent = '[Enter Your City Here]';
+  } else {
+    weatherCityElem.textContent = localStorage.getItem('city');
+  }
 }
 
-function createOpenWeatherLink(city) {
-  let openWeatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
-  return openWeatherLink;
+function setCity(evt) {
+  if (evt.type === 'click') {
+    weatherCityElem.textContent = '';
+  }
+  if (evt.type === 'keypress') {
+    if (evt.which === 13 || evt.keyCode === 13) {
+      if (weatherCityElem.textContent === '') {
+        weatherCityElem.textContent = localStorage.getItem('city') ||'[Enter Your City Here]';
+      } else {
+        localStorage.setItem('city', weatherCityElem.textContent);
+      }
+      evt.target.blur();
+      getWeather();
+    }
+  }
+  if (evt.type === 'blur') {
+    if (weatherCityElem.textContent === '' ) {
+      weatherCityElem.textContent = localStorage.getItem('city') || '[Enter Your City Here]';
+    } else {
+      getWeather();
+    }
+  }
+
 }
 
-async function getWeather(city) {
-  const url = createOpenWeatherLink(city);
+async function getWeather() {
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityElem.textContent}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
   const res = await fetch(url);
   const data = await res.json();
   const temperatureRender = (temperature) => {
@@ -272,14 +295,26 @@ async function getWeather(city) {
     return (temperature >= 0) ? `+${temperature}` : temperature ;
   };
 
-  weatherIconElem.classList.add(`owf-${data.weather[0].id}`);
-  weatherDescriptionElem.textContent = data.weather[0].description;
-  weatherTemperatureElem.textContent = `${temperatureRender(data.main.temp)}°C`;
-  weatherHumidityElem.textContent = `${data.main.humidity}`;
-  weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
-}
-getWeather(city);
+  try {
+    weatherIconElem.classList.add(`owf-${data.weather[0].id}`);
+    weatherDescriptionElem.textContent = data.weather[0].description;
+    weatherTemperatureElem.textContent = `${temperatureRender(data.main.temp)}°C`;
+    weatherHumidityElem.textContent = `${data.main.humidity}%`;
+    weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
+  } catch (evt) {
+    weatherCityElem.textContent = `[${data.message}]`;
+    weatherIconElem.className = `weather-icon owf owf-3x`;
+    weatherDescriptionElem.textContent = ``;
+    weatherTemperatureElem.textContent = ``;
+    weatherHumidityElem.textContent = ``;
+    weatherWindSpeedElem.textContent = ``;
+  }
 
+}
+document.addEventListener('DOMContentLoaded', getWeather);
+weatherCityElem.addEventListener('click', setCity);
+weatherCityElem.addEventListener('keypress', setCity);
+weatherCityElem.addEventListener('blur', setCity);
 
 
 
@@ -288,3 +323,4 @@ showTime();
 setBgAndGreeting();
 getName();
 getFocus();
+getCity();
