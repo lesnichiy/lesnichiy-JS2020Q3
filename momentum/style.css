@@ -34,7 +34,7 @@ body {
   background-position: center;
   background-size: cover;*/
   background-color: white;
-  opacity: 0.15;
+  opacity: 0.2;
   z-index: 5;
 }
 
@@ -55,10 +55,10 @@ body {
 
 .focus-title {
   margin-bottom: 0.5rem;
-  opacity: 0.9;
 }
 
-.change-bg-img-button {
+.change-bg-img-button,
+.change-quote-button {
   font-size: 1rem;
   color: #000000;
   background-color: #ffffff;
@@ -70,10 +70,41 @@ body {
               color 0.5s ease-in-out;
 }
 
-.change-bg-img-button:hover {
+.change-bg-img-button:hover,
+.change-quote-button:hover {
   color: #ffffff;
   background-color: darkslategrey;
 }
+
+.change-bg-img-button:active,
+.change-quote-button:active {
+  opacity: 0.5;
+  outline: none;
+}
+
+.quote-wrapper {
+  padding-top: 1rem;
+  margin-top: 4rem;
+  border-top: 2px solid darkslategrey;
+  width: 60%;
+}
+
+.quote blockquote {
+  font-style: italic;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.quote figcaption {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.change-quote-button {
+  margin-top: 1rem;
+}
+
 
 @media (max-width: 700px) {
   #time {
