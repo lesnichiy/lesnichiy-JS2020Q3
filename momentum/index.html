@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang='ru'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>Momentum</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="owfont-regular.css"  type="text/css">
+  <link rel='stylesheet' href='style.css'>
+
+</head>
+<body>
+
+  <div class='overlay'></div>
+
+  <div class='wrapper'>
+
+    <div class='weather-wrapper'>
+      <h2 class='weather-city'>Weather In Your City</h2>
+      <h2 class='weather-city' id='weather-city' contenteditable='true'></h2>
+      <div class='weather-icon owf owf-2x'></div>
+      <div class='weather-description'></div>
+      <div class='weather-temperature-wrapper'>Temperature: <span class='weather-temperature'></span></div>
+      <div class='weather-humidity-wrapper'>Humidity: <span class='weather-humidity'></span></div>
+      <div class='weather-wind-speed-wrapper'>Wind speed: <span class='weather-wind-speed'></span></div>
+    </div>
+
+    <div class='time-focus-wrapper'>
+      <h2 id='day'>Friday, 23 oct</h2>
+      <time id='time'></time>
+      <h1 class='greeting-title'>
+        <span id='greeting'></span>
+        <span id='name' contenteditable='true'></span>
+      </h1>
+
+      <h2 class='focus-title'>What Is Your Focus For Today?</h2>
+      <h2 class='focus-title' id='focus' contenteditable='true'></h2>
+      <button class='change-bg-img-button'>Change background</button>
+    </div>
+
+    <div class='quote-wrapper'>
+      <figure class='quote'>
+        <blockquote></blockquote>
+        <figcaption></figcaption>
+      </figure>
+      <button class='change-quote-button'>Get new quote</button>
+    </div>
+
+  </div>
+
+
+
+  <script src='script.js'></script>
+</body>
+</html>
