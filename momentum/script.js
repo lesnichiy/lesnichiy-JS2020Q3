@@ -216,7 +216,6 @@ function setFocus(evt) {
   }
 }
 
-
 //Event Listeners of Name and Focus
 nameElem.addEventListener('click', setName);
 nameElem.addEventListener('keypress', setName);
@@ -225,6 +224,21 @@ focusElem.addEventListener('click', setFocus);
 focusElem.addEventListener('keypress', setFocus);
 focusElem.addEventListener('blur', setFocus);
 
+
+//Quotes
+const quoteBlockquote = document.querySelector('.quote blockquote');
+const quoteFigcaption = document.querySelector('.quote figcaption');
+const changeQuoteButton = document.querySelector('.change-quote-button');
+
+async function getQuote() {
+  const url = `https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en`;
+  const res = await fetch(url);
+  const data = await res.json();
+  quoteBlockquote.textContent = data.quoteText;
+  quoteFigcaption.textContent = data.quoteAuthor;
+}
+document.addEventListener('DOMContentLoaded', getQuote);
+changeQuoteButton.addEventListener('click', getQuote);
 
 
 //Run
