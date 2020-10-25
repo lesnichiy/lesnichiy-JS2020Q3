@@ -127,21 +127,25 @@ function setBgAndGreeting() {
     //Night
     greetingElem.textContent = 'Good Night, ';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
+    document.body.style.textShadow = COLOR_PRIMARY;
     overlayElem.style.backgroundColor = COLOR_PRIMARY;
   } else if (hour < 12) {
     //Morning
     greetingElem.textContent = 'Good Morning, ';
     document.body.style.color = COLOR_PRIMARY;
+    document.body.style.textShadow = COLOR_PRIMARY_CONTRAST;
     overlayElem.style.backgroundColor = COLOR_PRIMARY_CONTRAST;
   } else if (hour < 18) {
     //Afternoon
     greetingElem.textContent = 'Good Afternoon, ';
     document.body.style.color = COLOR_PRIMARY;
+    document.body.style.textShadow = COLOR_PRIMARY_CONTRAST;
     overlayElem.style.backgroundColor = COLOR_PRIMARY_CONTRAST;
   } else {
     //Evening
     greetingElem.textContent = 'Good Evening, ';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
+    document.body.style.textShadow = COLOR_PRIMARY;
     overlayElem.style.backgroundColor = COLOR_PRIMARY;
   }
 }
@@ -179,7 +183,7 @@ function setName(evt) {
     if (nameElem.textContent === '') {
       nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
     } else {
-      localStorage.setItem('name', nameElem.textContent);
+      nameElem.textContent = '[Enter Your Name Here]';
     }
   }
 }
@@ -212,7 +216,7 @@ function setFocus(evt) {
     if (focusElem.textContent === '') {
       focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
     } else {
-      localStorage.setItem('focus', focusElem.textContent);
+      focusElem.textContent = '[Enter Your Focus For Today Here]';
     }
   }
 }
@@ -280,8 +284,10 @@ function setCity(evt) {
     if (weatherCityElem.textContent === '' ) {
       weatherCityElem.textContent = localStorage.getItem('city') || '[Enter Your City Here]';
     } else {
-      getWeather();
+      weatherCityElem.textContent = localStorage.getItem('city');
+      //getWeather();
     }
+
   }
 
 }
