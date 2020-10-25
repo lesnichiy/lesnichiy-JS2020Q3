@@ -231,11 +231,11 @@ const quoteFigcaption = document.querySelector('.quote figcaption');
 const changeQuoteButton = document.querySelector('.change-quote-button');
 
 async function getQuote() {
-  const url = `https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en`;
+  const url = `https://favqs.com/api/qotd`;
   const res = await fetch(url);
   const data = await res.json();
-  quoteBlockquote.textContent = data.quoteText;
-  quoteFigcaption.textContent = data.quoteAuthor;
+  quoteBlockquote.textContent = data.quote.body;
+  quoteFigcaption.textContent = data.quote.author;
 }
 document.addEventListener('DOMContentLoaded', getQuote);
 changeQuoteButton.addEventListener('click', getQuote);
