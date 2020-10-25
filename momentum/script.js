@@ -183,7 +183,7 @@ function setName(evt) {
     if (nameElem.textContent === '') {
       nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
     } else {
-      nameElem.textContent = '[Enter Your Name Here]';
+      nameElem.textContent = localStorage.getItem('name');
     }
   }
 }
@@ -216,7 +216,7 @@ function setFocus(evt) {
     if (focusElem.textContent === '') {
       focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
     } else {
-      focusElem.textContent = '[Enter Your Focus For Today Here]';
+      focusElem.textContent = localStorage.getItem('focus');
     }
   }
 }
@@ -309,7 +309,7 @@ async function getWeather() {
     weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
   } catch (evt) {
     weatherCityElem.textContent = `[${data.message}]`;
-    weatherIconElem.className = `weather-icon owf owf-3x`;
+    weatherIconElem.className = `weather-icon owf owf-2x`;
     weatherDescriptionElem.textContent = ``;
     weatherTemperatureElem.textContent = ``;
     weatherHumidityElem.textContent = ``;
