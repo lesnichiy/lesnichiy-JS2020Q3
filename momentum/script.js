@@ -240,6 +240,48 @@ async function getQuote() {
 document.addEventListener('DOMContentLoaded', getQuote);
 changeQuoteButton.addEventListener('click', getQuote);
 
+//Weather
+const weatherCityElem = document.querySelector('#weather-city');
+const weatherIconElem = document.querySelector('.weather-icon');
+const weatherDescriptionElem = document.querySelector('.weather-description');
+const weatherTemperatureElem = document.querySelector('.weather-temperature');
+const weatherHumidityElem = document.querySelector('.weather-humidity');
+const weatherWindSpeedElem = document.querySelector('.weather-wind-speed');
+
+
+const openWeatherApiKey = `4d7e149d43676736e640d174434d7fc9`;
+let openWeatherLang = `en`;
+let openWeatherUnitsType = `metric`;
+let city = getCity();
+
+function getCity() {
+  return weatherCityElem.textContent;
+}
+
+function createOpenWeatherLink(city) {
+  let openWeatherLink = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
+  return openWeatherLink;
+}
+
+async function getWeather(city) {
+  const url = createOpenWeatherLink(city);
+  const res = await fetch(url);
+  const data = await res.json();
+  const temperatureRender = (temperature) => {
+    temperature = Math.round(temperature);
+    return (temperature >= 0) ? `+${temperature}` : temperature ;
+  };
+
+  weatherIconElem.classList.add(`owf-${data.weather[0].id}`);
+  weatherDescriptionElem.textContent = data.weather[0].description;
+  weatherTemperatureElem.textContent = `${temperatureRender(data.main.temp)}°C`;
+  weatherHumidityElem.textContent = `${data.main.humidity}`;
+  weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
+}
+getWeather(city);
+
+
+
 
 //Run
 showTime();
