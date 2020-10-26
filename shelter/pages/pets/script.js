@@ -6,6 +6,14 @@ const overlayMobileMenu = document.querySelector('.header-overlay-mobile-menu');
 let pets = []; //8 items from pets.json
 let fullPetsList = []; //48 items
 
+function getNumberOfPages() {
+  if (window.innerWidth >= 1280) return 6;
+  if (window.innerWidth >= 768 && window.innerWidth < 1280) return 8;
+  return 16;
+}
+let currentPage = 1;
+let numberOfPages = getNumberOfPages();
+
 //Burger menu
 function toggleMobileMenu() {
   burgerButton.classList.toggle('header-site-menu-burger-button--opened');
@@ -86,8 +94,17 @@ cardsSliderWrapper.addEventListener('click', popupListener);
 //pets from json
 const requestPets = new XMLHttpRequest();
 
+function chunkArray(arr, chunkSize) {
+  var resultArr = [];
+  while (arr.length) {
+    resultArr.push(arr.splice(0, chunkSize));
+  }
+  return resultArr;
+}
+
 function createPets(petsList) {
   const petsCardsWrapper = document.querySelector('.pets-our-friends-cards');
+  petsCardsWrapper.innerHTML = '';
   petsCardsWrapper.innerHTML += createPetCards(petsList);
 }
 
@@ -130,7 +147,10 @@ requestPets.onload = () => {
 
   fullPetsList = sort863(fullPetsList);
 
-  createPets(fullPetsList);
+  fullPetsList = chunkArray(fullPetsList, (fullPetsList.length / numberOfPages) );
+  console.log(fullPetsList);
+
+  createPets(fullPetsList[0]);
 };
 
 requestPets.send();
@@ -161,3 +181,79 @@ function sort863(list) {
 
   return list;
 }
+
+//Pagination
+const firstPageButton = document.querySelector('.pets-our-friends-nav-button--start');
+const lastPageButton = document.querySelector('.pets-our-friends-nav-button--end');
+const prevPageButton = document.querySelector('.pets-our-friends-nav-button--prev');
+const nextPageButton = document.querySelector('.pets-our-friends-nav-button--next');
+const pageNum = document.querySelector('.pets-our-friends-nav-button--current-page-num');
+
+firstPageButton.addEventListener('click', (evt) => {
+  console.log('first');
+  currentPage = 1;
+  pageNum.textContent = currentPage;
+  firstPageButton.setAttribute('disabled', 'disabled');
+  firstPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  prevPageButton.setAttribute('disabled', 'disabled');
+  prevPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  createPets(fullPetsList[currentPage - 1]);
+
+  lastPageButton.removeAttribute('disabled', 'disabled');
+  lastPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+  nextPageButton.removeAttribute('disabled', 'disabled');
+  nextPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+});
+
+lastPageButton.addEventListener('click', (evt) => {
+  console.log('last');
+  currentPage = fullPetsList.length;
+  pageNum.textContent = currentPage;
+  lastPageButton.setAttribute('disabled', 'disabled');
+  lastPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  nextPageButton.setAttribute('disabled', 'disabled');
+  nextPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  createPets(fullPetsList[currentPage - 1]);
+
+  firstPageButton.removeAttribute('disabled', 'disabled');
+  firstPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+  prevPageButton.removeAttribute('disabled', 'disabled');
+  prevPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+
+});
+
+prevPageButton.addEventListener('click', (evt) => {
+  currentPage = currentPage - 1;
+  if (currentPage === 1) {
+    prevPageButton.setAttribute('disabled', 'disabled');
+    prevPageButton.classList.add('pets-our-friends-nav-button--disabled');
+    firstPageButton.setAttribute('disabled', 'disabled');
+    firstPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  }
+  if (currentPage < fullPetsList.length) {
+    lastPageButton.removeAttribute('disabled', 'disabled');
+    lastPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+    nextPageButton.removeAttribute('disabled', 'disabled');
+    nextPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+  }
+  pageNum.textContent = currentPage;
+  createPets(fullPetsList[currentPage - 1]);
+});
+
+nextPageButton.addEventListener('click', (evt) => {
+  currentPage = currentPage + 1;
+  if (currentPage === fullPetsList.length) {
+    nextPageButton.setAttribute('disabled', 'disabled');
+    nextPageButton.classList.add('pets-our-friends-nav-button--disabled');
+    lastPageButton.setAttribute('disabled', 'disabled');
+    lastPageButton.classList.add('pets-our-friends-nav-button--disabled');
+  }
+  if (currentPage > 1) {
+    firstPageButton.removeAttribute('disabled', 'disabled');
+    firstPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+    prevPageButton.removeAttribute('disabled', 'disabled');
+    prevPageButton.classList.remove('pets-our-friends-nav-button--disabled');
+  }
+  pageNum.textContent = currentPage;
+  createPets(fullPetsList[currentPage - 1]);
+});
