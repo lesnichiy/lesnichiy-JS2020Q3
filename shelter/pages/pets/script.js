@@ -3,7 +3,7 @@ const headerInnerWrapper = document.querySelector('.header-inner-wrapper');
 const headerSiteMenuNav = document.querySelector('.header-site-menu');
 const overlayMobileMenu = document.querySelector('.header-overlay-mobile-menu');
 
-let petsList = []; //8 items from pets.json
+let pets = []; //8 items from pets.json
 let fullPetsList = []; //48 items
 
 //Burger menu
@@ -48,7 +48,7 @@ function showHidePopup(name) {
 }
 
 function createPopupContentData(name) {
-  let currentPet = petsList.find( pet => pet.name === name);
+  let currentPet = pets.find( pet => pet.name === name);
   popupWindowTitle.textContent = currentPet.name;
   popupWindowPicture.src = currentPet.img;
   popupWindowType.textContent = currentPet.type;
@@ -86,12 +86,12 @@ cardsSliderWrapper.addEventListener('click', popupListener);
 //pets from json
 const requestPets = new XMLHttpRequest();
 
-function createPets() {
+function createPets(petsList) {
   const petsCardsWrapper = document.querySelector('.pets-our-friends-cards');
-  petsCardsWrapper.innerHTML += createPetCards();
+  petsCardsWrapper.innerHTML += createPetCards(petsList);
 }
 
-function createPetCards() {
+function createPetCards(petsList) {
   let strPetCards = ``;
 
   for (let i = 0; i < petsList.length; i++) {
@@ -108,11 +108,56 @@ function createPetCards() {
 requestPets.open('GET', './../../assets/pets.json');
 
 requestPets.onload = () => {
-  petsList = JSON.parse(requestPets.response);
-  console.log(petsList);
+  pets = JSON.parse(requestPets.response);
+  console.log(pets);
 
-  createPets();
+  fullPetsList = (() => {
+    let tempArr = [];
 
+    for (let i = 0; i < 6; i++) {
+      const newPets = pets;
+
+      for (let j = pets.length; j > 0; j--) {
+        let randInd = Math.floor(Math.random() * j);
+        const randElem = newPets.splice(randInd, 1)[0];
+        newPets.push(randElem);
+      }
+
+      tempArr = [...tempArr, ...newPets];
+    }
+    return tempArr;
+  })();
+
+  fullPetsList = sort863(fullPetsList);
+
+  createPets(fullPetsList);
 };
 
 requestPets.send();
+
+function sort863(list) {
+  let length = list.length;
+
+  for (let i = 0; i < (length / 6); i++) {
+    const stepList  = list.slice(i * 6, (i * 6) + 6);
+
+    for (let j = 0; j < 6; j++) {
+      const duplicatedItem = stepList.find( (item, ind) => {
+        return item.name === stepList[j].name && (ind !== j);
+      });
+
+      if (duplicatedItem !== undefined) {
+        const ind = (i * 6) + j;
+        const which8OfList = Math.trunc(ind / 8);
+
+        const elem = list.splice(ind, 1)[0];
+        list.splice(which8OfList * 8, 0, elem);
+
+        i -= 2;
+        break;
+      }
+    }
+  }
+
+  return list;
+}
