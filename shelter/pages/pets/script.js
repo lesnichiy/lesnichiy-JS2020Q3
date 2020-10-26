@@ -29,7 +29,7 @@ const popupWindowTitle = document.querySelector('.modal-window-title');
 
 function showHidePopup(name) {
   popupWindow.classList.toggle('modal-window-wrapper--closed');
-  document.body.classList.toggle('scroll-hidden');
+  document.body.classList.toggle('modal-window-scroll-hidden');
 
   popupWindowTitle.textContent = name;
 

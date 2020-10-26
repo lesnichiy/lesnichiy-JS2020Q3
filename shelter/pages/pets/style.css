@@ -395,6 +395,10 @@ body {
   min-height: 100%;
 }
 
+.modal-window-scroll-hidden {
+  overflow: hidden;
+}
+
 .modal-window-wrapper--closed {
   display: none;
 }
