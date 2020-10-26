@@ -2,8 +2,6 @@ const burgerButton = document.querySelector('.header-site-menu-burger-button');
 const headerInnerWrapper = document.querySelector('.header-inner-wrapper');
 const headerSiteMenuNav = document.querySelector('.header-site-menu');
 const overlayMobileMenu = document.querySelector('.header-overlay-mobile-menu');
-//const bodyElement = document.querySelector('body');
-
 
 //Burger menu
 function toggleMobileMenu() {
@@ -23,7 +21,6 @@ overlayMobileMenu.addEventListener('click', (evt) => {
   evt.preventDefault();
   toggleMobileMenu();
 });
-
 
 //Popup window
 const cardsSliderWrapper = document.querySelector('.main-page-pets-slider-cards');
