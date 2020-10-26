@@ -428,6 +428,7 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  border-radius: 10px;
 }
 
 .modal-window:hover {
@@ -467,6 +468,7 @@ body {
   width: 500px;
   height: 500px;
   flex-shrink: 0;
+  border-radius: 10px 0 0 10px;
 }
 
 .modal-window-content {
@@ -573,6 +575,37 @@ body {
     margin-top: 65px;
   }
   /* ===== / footer ===== */
+
+  /* ===== modal window ===== */
+
+  .modal-window {
+    width: 630px;
+    min-height: 350px;
+  }
+
+  .modal-window-picture {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-window-content {
+    max-width: 260px;
+    margin-left: 11px;
+    margin-right: 9px;
+  }
+
+  .modal-window-description {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 260px;
+  }
+
+
+  .modal-window-pet-info-list li + li {
+    margin-top: 6px;
+  }
+  /* ===== / modal window ===== */
 }
 
 @media (max-width: 767px) {
@@ -734,4 +767,36 @@ body {
   }
   /* ===== / footer ===== */
 
+
+  /* ===== modal window ===== */
+
+  .modal-window {
+    width: 240px;
+    min-height: 350px;
+  }
+
+  .modal-window-picture {
+    display: none;
+  }
+
+  .modal-window-content {
+    max-width: 220px;
+    margin-left: 11px;
+    margin-right: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .modal-window-description {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 220px;
+  }
+
+
+  .modal-window-pet-info-list li + li {
+    margin-top: 5px;
+  }
+  /* ===== / modal window ===== */
 }
