@@ -58,7 +58,6 @@ function createPopupContentData(name) {
   popupWindowInoculations.textContent = currentPet.inoculations;
   popupWindowDiseases.textContent = currentPet.diseases;
   popupWindowParasites.textContent = currentPet.parasites;
-
 }
 
 function popupListener(evt) {
@@ -97,7 +96,7 @@ function createPetCards() {
 
   for (let i = 0; i < petsList.length; i++) {
     strPetCards = `${strPetCards}<li class='pets-our-friends-card'>
-            <img src='${petsList[i].img}' alt='Cat ${petsList[i].name}' class='pets-our-friends-card-picture'>
+            <img src='${petsList[i].img}' alt='${petsList[i].type} ${petsList[i].name}' class='pets-our-friends-card-picture'>
             <h4 class='pets-our-friends-card-name shelter-main-page-h4'>${petsList[i].name}</h4>
             <button class='shelter-button pets-our-friends-card-button'>Learn more</button>
           </li>`;
