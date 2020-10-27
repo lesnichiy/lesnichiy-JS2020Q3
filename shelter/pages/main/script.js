@@ -4,7 +4,7 @@ const headerSiteMenuNav = document.querySelector('.header-site-menu');
 const overlayMobileMenu = document.querySelector('.header-overlay-mobile-menu');
 
 let petsList = []; //8 items from pets.json
-let fullPetsList = []; //48 items
+let currentSlidePetsList = [];
 
 //Burger menu
 function toggleMobileMenu() {
@@ -86,18 +86,42 @@ cardsSliderWrapper.addEventListener('click', popupListener);
 //pets from json
 const requestPets = new XMLHttpRequest();
 
-function createPets() {
-  const petsCardsWrapper = document.querySelector('.main-page-pets-slider-cards');
-  petsCardsWrapper.innerHTML += createPetCards();
+function createPets(list) {
+  //cardsSliderWrapper.innerHTML = '';
+  /*let slidesNumber = 0;
+
+  if (window.innerWidth >= 1280) {
+    slidesNumber = 3;
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    slidesNumber = 2;
+  } else {
+    slidesNumber = 1;
+  }
+
+  let currentCardsList = cardsSliderWrapper.querySelectorAll('.main-page-pets-slider-card');
+  console.log(currentCardsList);
+  if (currentCardsList.length > slidesNumber) {
+    for (let i = 0; i < slidesNumber; i++) {
+      currentCardsList[i].remove();
+    }
+  }
+  for (let i = 0; i < currentCardsList.length; i++) {
+    currentCardsList[i].classList.add('main-page-pets-slider-card--prev');
+    currentCardsList[i].classList.remove('main-page-pets-slider-card--active');
+
+  }*/
+
+  cardsSliderWrapper.innerHTML = createPetCards(list);
+  currentSlidePetsList = list;
 }
 
-function createPetCards() {
+function createPetCards(list) {
   let strPetCards = ``;
 
-  for (let i = 0; i < petsList.length; i++) {
+  for (let i = 0; i < list.length; i++) {
     strPetCards = `${strPetCards}<li class='main-page-pets-slider-card'>
-            <img src='${petsList[i].img}' alt='${petsList[i].type} ${petsList[i].name}' class='main-page-pets-slider-card-picture'>
-            <h4 class='main-page-pets-slider-card-name shelter-main-page-h4'>${petsList[i].name}</h4>
+            <img src='${list[i].img}' alt='${list[i].type} ${list[i].name}' class='main-page-pets-slider-card-picture'>
+            <h4 class='main-page-pets-slider-card-name shelter-main-page-h4'>${list[i].name}</h4>
             <button class='shelter-button main-page-pets-slider-card-button'>Learn more</button>
           </li>`;
   }
@@ -111,8 +135,49 @@ requestPets.onload = () => {
   petsList = JSON.parse(requestPets.response);
   console.log(petsList);
 
-  createPets();
+  currentSlidePetsList = createSliderArr();
+  console.log(currentSlidePetsList);
+
+  createPets(currentSlidePetsList);
 
 };
 
 requestPets.send();
+
+//slider
+const sliderLeftButton = document.querySelector('.main-page-pets-slider-button--left');
+const sliderRightButton = document.querySelector('.main-page-pets-slider-button--right');
+
+function createSliderArr() {
+  const slideArr = [];
+  let slidesNumber = 0;
+
+  if (window.innerWidth >= 1280) {
+    slidesNumber = 3;
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    slidesNumber = 2;
+  } else {
+    slidesNumber = 1;
+  }
+
+  for (let i = 0; i < slidesNumber; i++) {
+    let randElem = petsList[Math.floor(Math.random() * petsList.length)];
+
+    if (currentSlidePetsList.some(item => item.name === randElem.name)) {
+      i--;
+    } else if (slideArr.length !== 0 && slideArr.some(item => item.name === randElem.name)) {
+      i--;
+    } else {
+      slideArr.push(randElem);
+    }
+  }
+
+  return slideArr;
+}
+
+function changeSlide() {
+  createPets(createSliderArr());
+}
+
+sliderLeftButton.addEventListener('click', changeSlide);
+sliderRightButton.addEventListener('click', changeSlide);

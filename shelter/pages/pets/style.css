@@ -305,7 +305,8 @@ body {
   border: 2px solid #fddcc4;
 }
 
-.pets-our-friends-nav-button:active {
+.pets-our-friends-nav-button:active,
+.pets-our-friends-nav-button:focus {
   outline: none;
 }
 
