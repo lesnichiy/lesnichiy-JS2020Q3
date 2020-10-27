@@ -87,9 +87,31 @@ cardsSliderWrapper.addEventListener('click', popupListener);
 const requestPets = new XMLHttpRequest();
 
 function createPets(list) {
-  let petsCardsWrapper = document.querySelector('.main-page-pets-slider-cards');
-  petsCardsWrapper.innerHTML = '';
-  petsCardsWrapper.innerHTML += createPetCards(list);
+  //cardsSliderWrapper.innerHTML = '';
+  /*let slidesNumber = 0;
+
+  if (window.innerWidth >= 1280) {
+    slidesNumber = 3;
+  } else if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    slidesNumber = 2;
+  } else {
+    slidesNumber = 1;
+  }
+
+  let currentCardsList = cardsSliderWrapper.querySelectorAll('.main-page-pets-slider-card');
+  console.log(currentCardsList);
+  if (currentCardsList.length > slidesNumber) {
+    for (let i = 0; i < slidesNumber; i++) {
+      currentCardsList[i].remove();
+    }
+  }
+  for (let i = 0; i < currentCardsList.length; i++) {
+    currentCardsList[i].classList.add('main-page-pets-slider-card--prev');
+    currentCardsList[i].classList.remove('main-page-pets-slider-card--active');
+
+  }*/
+
+  cardsSliderWrapper.innerHTML = createPetCards(list);
   currentSlidePetsList = list;
 }
 

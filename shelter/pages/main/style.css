@@ -310,6 +310,8 @@ body {
   border-radius: 50%;
   background: none;
   transition-duration: 0.5s;
+  position: relative;
+  z-index: 3;
 }
 
 .main-page-pets-slider-button img {
@@ -338,6 +340,8 @@ body {
   width: 990px;
   list-style: none;
   overflow: hidden;
+  position: relative;
+  z-index: 2;
 }
 
 .main-page-pets-slider-card {
@@ -389,6 +393,8 @@ body {
 .main-page-pets-slider-card-button:focus {
   outline: none;
 }
+
+.main-page-pets-slider-card--active {}
 
 /* ===== / pets ===== */
 
