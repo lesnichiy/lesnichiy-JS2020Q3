@@ -127,25 +127,25 @@ function setBgAndGreeting() {
     //Night
     greetingElem.textContent = 'Good Night, ';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
-    document.body.style.textShadow = COLOR_PRIMARY;
+    document.body.style.textShadow = `0 0 5px ${COLOR_PRIMARY}`;
     overlayElem.style.backgroundColor = COLOR_PRIMARY;
   } else if (hour < 12) {
     //Morning
     greetingElem.textContent = 'Good Morning, ';
     document.body.style.color = COLOR_PRIMARY;
-    document.body.style.textShadow = COLOR_PRIMARY_CONTRAST;
+    document.body.style.textShadow = `0 0 5px ${COLOR_PRIMARY_CONTRAST}`;
     overlayElem.style.backgroundColor = COLOR_PRIMARY_CONTRAST;
   } else if (hour < 18) {
     //Afternoon
     greetingElem.textContent = 'Good Afternoon, ';
     document.body.style.color = COLOR_PRIMARY;
-    document.body.style.textShadow = COLOR_PRIMARY_CONTRAST;
+    document.body.style.textShadow = `0 0 5px ${COLOR_PRIMARY_CONTRAST}`;
     overlayElem.style.backgroundColor = COLOR_PRIMARY_CONTRAST;
   } else {
     //Evening
     greetingElem.textContent = 'Good Evening, ';
     document.body.style.color = COLOR_PRIMARY_CONTRAST;
-    document.body.style.textShadow = COLOR_PRIMARY;
+    document.body.style.textShadow = `0 0 5px ${COLOR_PRIMARY}`;
     overlayElem.style.backgroundColor = COLOR_PRIMARY;
   }
 }
