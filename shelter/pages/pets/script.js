@@ -87,6 +87,14 @@ function popupListener(evt) {
   popupWindowOverlay.addEventListener('click', showHidePopup);
   popupWindowCloseButton.addEventListener('click', showHidePopup);
 
+  //change Close Button style by hover on Overlay
+  popupWindowOverlay.addEventListener('mouseenter', () => {
+    popupWindowCloseButton.classList.add('modal-window-close-button--overlay-hover');
+  });
+  popupWindowOverlay.addEventListener('mouseleave', () => {
+    popupWindowCloseButton.classList.remove('modal-window-close-button--overlay-hover');
+  });
+
 }
 
 cardsSliderWrapper.addEventListener('click', popupListener);
