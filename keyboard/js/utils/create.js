@@ -21,7 +21,7 @@ export default function create(el, classNames, child, parent, ...dataAttr) {
   } else if (child && typeof child === 'object') {
     element.appendChild(child);
   } else if (child && typeof child === 'string') {
-    element.textContent = child;
+    element.innerHTML = child;
   }
 
   if (parent) parent.appendChild(element);
