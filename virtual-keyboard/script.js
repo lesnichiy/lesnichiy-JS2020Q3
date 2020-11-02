@@ -8,7 +8,8 @@ const Keyboard = {
 
   properties: {
     value: "",
-    capsLock: false
+    isCaps: false,
+    shiftKey: false,
   },
 
   keyLayouts: {
@@ -18,285 +19,341 @@ const Keyboard = {
         small: 'ё',
         shift: 'Ё',
         code: 'Backquote',
+        isFnKey: false,
       },
       {
         small: '1',
         shift: '!',
         code: 'Digit1',
+        isFnKey: false,
       },
       {
         small: '2',
         shift: '"',
         code: 'Digit2',
+        isFnKey: false,
       },
       {
         small: '3',
         shift: '№',
         code: 'Digit3',
+        isFnKey: false,
       },
       {
         small: '4',
         shift: ';',
         code: 'Digit4',
+        isFnKey: false,
       },
       {
         small: '5',
         shift: '%',
         code: 'Digit5',
+        isFnKey: false,
       },
       {
         small: '6',
         shift: ':',
         code: 'Digit6',
+        isFnKey: false,
       },
       {
         small: '7',
         shift: '?',
         code: 'Digit7',
+        isFnKey: false,
       },
       {
         small: '8',
         shift: '*',
         code: 'Digit8',
+        isFnKey: false,
       },
       {
         small: '9',
         shift: '(',
         code: 'Digit9',
+        isFnKey: false,
       },
       {
         small: '0',
         shift: ')',
         code: 'Digit0',
+        isFnKey: false,
       },
       {
         small: '-',
         shift: '_',
         code: 'Minus',
+        isFnKey: false,
       },
       {
         small: '=',
         shift: '+',
         code: 'Equal',
+        isFnKey: false,
       },
       {
         small: 'Backspace',
         shift: null,
         code: 'Backspace',
+        isFnKey: true,
       },
         /*2nd row*/
       {
         small: 'Tab',
         shift: null,
         code: 'Tab',
+        isFnKey: true,
       },
       {
         small: 'й',
         shift: 'Й',
         code: 'KeyQ',
+        isFnKey: false,
       },
       {
         small: 'ц',
         shift: 'Ц',
         code: 'KeyW',
+        isFnKey: false,
       },
       {
         small: 'у',
         shift: 'У',
         code: 'KeyE',
+        isFnKey: false,
       },
       {
         small: 'к',
         shift: 'К',
         code: 'KeyR',
+        isFnKey: false,
       },
       {
         small: 'е',
         shift: 'Е',
         code: 'KeyT',
+        isFnKey: false,
       },
       {
         small: 'н',
         shift: 'Н',
         code: 'KeyY',
+        isFnKey: false,
       },
       {
         small: 'г',
         shift: 'Г',
         code: 'KeyU',
+        isFnKey: false,
       },
       {
         small: 'ш',
         shift: 'Ш',
         code: 'KeyI',
+        isFnKey: false,
       },
       {
         small: 'щ',
         shift: 'Щ',
         code: 'KeyO',
+        isFnKey: false,
       },
       {
         small: 'з',
         shift: 'З',
         code: 'KeyP',
+        isFnKey: false,
       },
       {
         small: 'х',
         shift: 'Х',
         code: 'BracketLeft',
+        isFnKey: false,
       },
       {
         small: 'ъ',
         shift: 'Ъ',
         code: 'BracketRight',
+        isFnKey: false,
       },
         /*3rd row*/
       {
         small: 'CapsLock',
         shift: null,
         code: 'CapsLock',
+        isFnKey: true,
       },
       {
         small: 'ф',
         shift: 'Ф',
         code: 'KeyA',
+        isFnKey: false,
       },
       {
         small: 'ы',
         shift: 'Ы',
         code: 'KeyS',
+        isFnKey: false,
       },
       {
         small: 'в',
         shift: 'В',
         code: 'KeyD',
+        isFnKey: false,
       },
       {
         small: 'а',
         shift: 'А',
         code: 'KeyF',
+        isFnKey: false,
       },
       {
         small: 'п',
         shift: 'П',
         code: 'KeyG',
+        isFnKey: false,
       },
       {
         small: 'р',
         shift: 'Р',
         code: 'KeyH',
+        isFnKey: false,
       },
       {
         small: 'о',
         shift: 'О',
         code: 'KeyJ',
+        isFnKey: false,
       },
       {
         small: 'л',
         shift: 'Л',
         code: 'KeyK',
+        isFnKey: false,
       },
       {
         small: 'д',
         shift: 'Д',
         code: 'KeyL',
+        isFnKey: false,
       },
       {
         small: 'ж',
         shift: 'Ж',
         code: 'Semicolon',
+        isFnKey: false,
       },
       {
         small: 'э',
         shift: 'Э',
         code: 'Quote',
+        isFnKey: false,
       },
       {
         small: 'Enter',
         shift: null,
         code: 'Enter',
+        isFnKey: true,
       },
         /*4th row*/
       {
         small: 'Shift',
         shift: null,
         code: 'ShiftLeft',
+        isFnKey: true,
       },
       {
         small: 'я',
         shift: 'Я',
         code: 'KeyZ',
+        isFnKey: false,
       },
       {
         small: 'ч',
         shift: 'Ч',
         code: 'KeyX',
+        isFnKey: false,
       },
       {
         small: 'с',
         shift: 'С',
         code: 'KeyC',
+        isFnKey: false,
       },
       {
         small: 'м',
         shift: 'М',
         code: 'KeyV',
+        isFnKey: false,
       },
       {
         small: 'и',
         shift: 'И',
         code: 'KeyB',
+        isFnKey: false,
       },
       {
         small: 'т',
         shift: 'Т',
         code: 'KeyN',
+        isFnKey: false,
       },
       {
         small: 'ь',
         shift: 'Ь',
         code: 'KeyM',
+        isFnKey: false,
       },
       {
         small: 'б',
         shift: 'Б',
         code: 'Comma',
+        isFnKey: false,
       },
       {
         small: 'ю',
         shift: 'Ю',
         code: 'Period',
+        isFnKey: false,
       },
       {
         small: '.',
         shift: ',',
         code: 'Slash',
+        isFnKey: false,
       },
         /*5th row*/
       {
         small: 'done',
         shift: null,
         code: 'Done',
+        isFnKey: true,
       },
       {
         small: 'ru',
         shift: 'en',
         code: 'Lang',
+        isFnKey: true,
       },
       {
         small: ' ',
         shift: null,
         code: 'Space',
+        isFnKey: false,
       },
       {
         small: 'arrowLeft',
         shift: null,
         code: 'ArrowLeft',
+        isFnKey: true,
       },
       {
         small: 'arrowRight',
         shift: null,
         code: 'ArrowRight',
+        isFnKey: true,
       },
       /*"ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace",
       "tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]",
@@ -310,285 +367,341 @@ const Keyboard = {
         small: '`',
         shift: '~',
         code: 'Backquote',
+        isFnKey: false,
       },
       {
         small: '1',
         shift: '!',
         code: 'Digit1',
+        isFnKey: false,
       },
       {
         small: '2',
         shift: '@',
         code: 'Digit2',
+        isFnKey: false,
       },
       {
         small: '3',
         shift: '#',
         code: 'Digit3',
+        isFnKey: false,
       },
       {
         small: '4',
         shift: '$',
         code: 'Digit4',
+        isFnKey: false,
       },
       {
         small: '5',
         shift: '%',
         code: 'Digit5',
+        isFnKey: false,
       },
       {
         small: '6',
         shift: '^',
         code: 'Digit6',
+        isFnKey: false,
       },
       {
         small: '7',
         shift: '&',
         code: 'Digit7',
+        isFnKey: false,
       },
       {
         small: '8',
         shift: '*',
         code: 'Digit8',
+        isFnKey: false,
       },
       {
         small: '9',
         shift: '(',
         code: 'Digit9',
+        isFnKey: false,
       },
       {
         small: '0',
         shift: ')',
         code: 'Digit0',
+        isFnKey: false,
       },
       {
         small: '-',
         shift: '_',
         code: 'Minus',
+        isFnKey: false,
       },
       {
         small: '=',
         shift: '+',
         code: 'Equal',
+        isFnKey: false,
       },
       {
         small: 'Backspace',
         shift: null,
         code: 'Backspace',
+        isFnKey: true,
       },
       /*2nd row*/
       {
         small: 'Tab',
         shift: null,
         code: 'Tab',
+        isFnKey: true,
       },
       {
         small: 'q',
         shift: 'Q',
         code: 'KeyQ',
+        isFnKey: false,
       },
       {
         small: 'w',
         shift: 'W',
         code: 'KeyW',
+        isFnKey: false,
       },
       {
         small: 'e',
         shift: 'E',
         code: 'KeyE',
+        isFnKey: false,
       },
       {
         small: 'r',
         shift: 'R',
         code: 'KeyR',
+        isFnKey: false,
       },
       {
         small: 't',
         shift: 'T',
         code: 'KeyT',
+        isFnKey: false,
       },
       {
         small: 'y',
         shift: 'Y',
         code: 'KeyY',
+        isFnKey: false,
       },
       {
         small: 'u',
         shift: 'U',
         code: 'KeyU',
+        isFnKey: false,
       },
       {
         small: 'i',
         shift: 'I',
         code: 'KeyI',
+        isFnKey: false,
       },
       {
         small: 'o',
         shift: 'O',
         code: 'KeyO',
+        isFnKey: false,
       },
       {
         small: 'p',
         shift: 'P',
         code: 'KeyP',
+        isFnKey: false,
       },
       {
         small: '[',
         shift: '{',
         code: 'BracketLeft',
+        isFnKey: false,
       },
       {
         small: ']',
         shift: '}',
         code: 'BracketRight',
+        isFnKey: false,
       },
         /*3rd row*/
       {
         small: 'CapsLock',
         shift: null,
         code: 'CapsLock',
+        isFnKey: true,
       },
       {
         small: 'a',
         shift: 'A',
         code: 'KeyA',
+        isFnKey: false,
       },
       {
         small: 's',
         shift: 'S',
         code: 'KeyS',
+        isFnKey: false,
       },
       {
         small: 'd',
         shift: 'D',
         code: 'KeyD',
+        isFnKey: false,
       },
       {
         small: 'f',
         shift: 'F',
         code: 'KeyF',
+        isFnKey: false,
       },
       {
         small: 'g',
         shift: 'G',
         code: 'KeyG',
+        isFnKey: false,
       },
       {
         small: 'h',
         shift: 'H',
         code: 'KeyH',
+        isFnKey: false,
       },
       {
         small: 'j',
         shift: 'J',
         code: 'KeyJ',
+        isFnKey: false,
       },
       {
         small: 'k',
         shift: 'K',
         code: 'KeyK',
+        isFnKey: false,
       },
       {
         small: 'l',
         shift: 'L',
         code: 'KeyL',
+        isFnKey: false,
       },
       {
         small: ';',
         shift: ':',
         code: 'Semicolon',
+        isFnKey: false,
       },
       {
         small: "'",
         shift: '"',
         code: 'Quote',
+        isFnKey: false,
       },
       {
         small: 'Enter',
         shift: null,
         code: 'Enter',
+        isFnKey: true,
       },
         /*4th row*/
       {
         small: 'Shift',
         shift: null,
         code: 'ShiftLeft',
+        isFnKey: true,
       },
       {
         small: 'z',
         shift: 'Z',
         code: 'KeyZ',
+        isFnKey: false,
       },
       {
         small: 'x',
         shift: 'X',
         code: 'KeyX',
+        isFnKey: false,
       },
       {
         small: 'c',
         shift: 'C',
         code: 'KeyC',
+        isFnKey: false,
       },
       {
         small: 'v',
         shift: 'V',
         code: 'KeyV',
+        isFnKey: false,
       },
       {
         small: 'b',
         shift: 'B',
         code: 'KeyB',
+        isFnKey: false,
       },
       {
         small: 'n',
         shift: 'N',
         code: 'KeyN',
+        isFnKey: false,
       },
       {
         small: 'm',
         shift: 'M',
         code: 'KeyM',
+        isFnKey: false,
       },
       {
         small: ',',
         shift: '<',
         code: 'Comma',
+        isFnKey: false,
       },
       {
         small: '.',
         shift: '>',
         code: 'Period',
+        isFnKey: false,
       },
       {
         small: '/',
         shift: '?',
         code: 'Slash',
+        isFnKey: false,
       },
         /*5th row*/
       {
         small: 'done',
         shift: null,
         code: 'Done',
+        isFnKey: true,
       },
       {
         small: 'en',
         shift: 'ru',
         code: 'Lang',
+        isFnKey: true,
       },
       {
         small: ' ',
         shift: null,
         code: 'Space',
+        isFnKey: false,
       },
       {
         small: 'arrowLeft',
         shift: null,
         code: 'ArrowLeft',
+        isFnKey: true,
       },
       {
         small: 'arrowRight',
         shift: null,
         code: 'ArrowRight',
+        isFnKey: true,
       },
 
 
@@ -777,17 +890,36 @@ const Keyboard = {
     if (type.match(/keydown|mousedown/)) {
       //if (type.match(/key/)) evt.preventDefault();
       let keyIndex = Keyboard.keyButtons.findIndex( key => key.code === code);
-      Keyboard.elements.keys[keyIndex].classList.add('keyboard__key--pressed');
+      let currentKey = Keyboard.elements.keys[keyIndex];
+      currentKey.classList.add('keyboard__key--pressed');
 
+      if (code.match(/Shift/)) {
+        if (Keyboard.properties.shiftKey) {
+          Keyboard.properties.shiftKey = false;
+        } else {
+          Keyboard.properties.shiftKey = true;
+        }
+        currentKey.classList.toggle('keyboard__key--active');
+      }
 
       //Switch language
-      if (keyObj.code.match(/Lang/)) {
-        this.switchLanguage(keyObj.shift);
+      if (keyObj.code.match(/Lang/)) this.switchLanguage(keyObj.shift);
+
+
+      if (!Keyboard.properties.isCaps) {
+        Keyboard.printToOutput(keyObj, Keyboard.properties.shiftKey ? keyObj.shift : keyObj.small);
+      } else if (Keyboard.properties.isCaps) {
+        if (Keyboard.properties.shiftKey) {
+          Keyboard.printToOutput(keyObj, currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+        } else {
+          Keyboard.printToOutput(keyObj, !currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+        }
       }
 
     } else if (type.match(/keyup|mouseup/)) {
       let keyIndex = Keyboard.keyButtons.findIndex( key => key.code === code);
       Keyboard.elements.keys[keyIndex].classList.remove('keyboard__key--pressed');
+
     }
 
 
@@ -814,8 +946,49 @@ const Keyboard = {
         currentKey.querySelector('.keyboard__key-small').innerHTML = keyObj.small;
       }
 
-
     });
+
+  },
+
+  printToOutput(keyObj, symbol) {
+    let cursorPosition = Keyboard.elements.outputText.selectionStart;
+    const leftText = Keyboard.elements.outputText.value.slice(0, cursorPosition);
+    const rightText = Keyboard.elements.outputText.value.slice(cursorPosition);
+
+    console.log(keyObj.code, cursorPosition);
+
+    const fnButtonsHandler = {
+      Tab: () => {
+        Keyboard.elements.outputText.value = `${leftText}\t${rightText}`;
+        cursorPosition += 1;
+      },
+      ArrowLeft: () => {
+        cursorPosition = cursorPosition - 1 >= 0 ? cursorPosition - 1 : 0;
+      },
+      ArrowRight: () => {
+        cursorPosition += 1;
+      },
+      Enter: () => {
+        Keyboard.elements.outputText.value = `${leftText}\n${rightText}`;
+        cursorPosition += 1;
+      },
+      Backspace: () => {
+        Keyboard.elements.outputText.value = `${leftText.slice(0, -1)}${rightText}`;
+        cursorPosition -= 1;
+      },
+      Space: () => {
+        Keyboard.elements.outputText.value = `${leftText} ${rightText}`;
+        cursorPosition += 1;
+      },
+    };
+
+    if (fnButtonsHandler[keyObj.code]) {
+      fnButtonsHandler[keyObj.code]();
+    } else if (!keyObj.isFnKey) {
+      cursorPosition += 1;
+      Keyboard.elements.outputText.value = `${leftText}${symbol || ''}${rightText}`;
+    }
+    Keyboard.elements.outputText.setSelectionRange(cursorPosition, cursorPosition);
 
   },
 
