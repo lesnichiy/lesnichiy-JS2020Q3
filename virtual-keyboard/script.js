@@ -1033,7 +1033,7 @@ const Keyboard = {
         }
       });
     } else {
-      console.log('dsfsdfg');
+
       Keyboard.keyButtons.forEach((button, i) => {
         if (!button.isFnKey && Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').innerHTML && !Keyboard.properties.shiftKey) {
           Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').classList.remove('shift-key--active');
@@ -1066,8 +1066,6 @@ const Keyboard = {
     let cursorPosition = Keyboard.elements.outputText.selectionStart;
     const leftText = Keyboard.elements.outputText.value.slice(0, cursorPosition);
     const rightText = Keyboard.elements.outputText.value.slice(cursorPosition);
-
-    console.log(keyObj.code, cursorPosition);
 
     const fnButtonsHandler = {
       Tab: () => {
