@@ -991,7 +991,7 @@ const Keyboard = {
 
       let currentKey = this.elements.keys[i];
 
-      if (!this.elements.keys[i].dataset.code.match(/Backspace|Tab|Caps|Shift|Enter|Done|Arrow|Space/)) {
+      if (!this.elements.keys[i].dataset.code.match(/Backspace|Tab|Caps|Shift|Enter|Done|Arrow|Space|Sound|Record/)) {
         if (keyObj.shift && keyObj.shift.match(/[^a-zA-Zа-яА-ЯёЁ0-9]/g) ) {
           currentKey.querySelector('.keyboard__key-shift').innerHTML = keyObj.shift;
         } else if (keyObj.shift && (keyObj.shift === 'ru' || keyObj.shift === 'en')) {
