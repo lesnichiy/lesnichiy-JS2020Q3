@@ -341,7 +341,7 @@ const Keyboard = {
         small: ' ',
         shift: null,
         code: 'Space',
-        isFnKey: false,
+        isFnKey: true,
       },
       {
         small: 'arrowLeft',
@@ -689,7 +689,7 @@ const Keyboard = {
         small: ' ',
         shift: null,
         code: 'Space',
-        isFnKey: false,
+        isFnKey: true,
       },
       {
         small: 'arrowLeft',
@@ -896,11 +896,26 @@ const Keyboard = {
       if (code.match(/Shift/)) {
         if (Keyboard.properties.shiftKey) {
           Keyboard.properties.shiftKey = false;
+          Keyboard.switchUpperCase(false);
         } else {
           Keyboard.properties.shiftKey = true;
+          Keyboard.switchUpperCase(true);
         }
         currentKey.classList.toggle('keyboard__key--active');
       }
+
+      if (code.match(/Caps/)) {
+        if (Keyboard.properties.isCaps) {
+          Keyboard.properties.isCaps = false;
+          Keyboard.switchUpperCase(false);
+        } else {
+          Keyboard.properties.isCaps = true;
+          Keyboard.switchUpperCase(true);
+        }
+        currentKey.classList.toggle('keyboard__key--active');
+      }
+
+      //if (Keyboard.properties.shiftKey) Keyboard.switchUpperCase(true);
 
       //Switch language
       if (keyObj.code.match(/Lang/)) this.switchLanguage(keyObj.shift);
@@ -910,9 +925,17 @@ const Keyboard = {
         Keyboard.printToOutput(keyObj, Keyboard.properties.shiftKey ? keyObj.shift : keyObj.small);
       } else if (Keyboard.properties.isCaps) {
         if (Keyboard.properties.shiftKey) {
-          Keyboard.printToOutput(keyObj, currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+          if (keyObj.isFnKey) {
+            Keyboard.printToOutput(keyObj, '');
+          } else {
+            Keyboard.printToOutput(keyObj, currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+          }
         } else {
-          Keyboard.printToOutput(keyObj, !currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+          if (keyObj.isFnKey) {
+            Keyboard.printToOutput(keyObj, '');
+          } else {
+            Keyboard.printToOutput(keyObj, !currentKey.querySelector('.keyboard__key-shift').innerHTML ? keyObj.shift : keyObj.small);
+          }
         }
       }
 
@@ -947,6 +970,59 @@ const Keyboard = {
       }
 
     });
+
+  },
+
+  switchUpperCase(isTrue) {
+    if (isTrue) {
+      Keyboard.keyButtons.forEach((button, i) => {
+
+        if (button.shift) {
+          if (!button.isFnKey && Keyboard.properties.shiftKey) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').classList.add('shift-key--active');
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').classList.add('shift-key--inactive');
+          }
+        }
+
+        if (!button.isFnKey
+            && Keyboard.properties.isCaps
+            && !Keyboard.properties.shiftKey
+            && !Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').innerHTML
+        ) {
+          Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.shift;
+        } else if (!button.isFnKey && Keyboard.properties.isCaps && Keyboard.properties.shiftKey) {
+          Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.small;
+        } else if (!button.isFnKey && !Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').innerHTML) {
+          Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.shift;
+        }
+      });
+    } else {
+      console.log('dsfsdfg');
+      Keyboard.keyButtons.forEach((button, i) => {
+        if (!button.isFnKey && Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').innerHTML && !Keyboard.properties.shiftKey) {
+          Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').classList.remove('shift-key--active');
+          Keyboard.elements.keys[i].querySelector('.keyboard__key-small').classList.remove('shift-key--inactive');
+
+          if (!Keyboard.properties.isCaps) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.small;
+          } else if (!Keyboard.properties.isCaps) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.shift;
+          }
+        } else if (!button.isFnKey && !Keyboard.elements.keys[i].querySelector('.keyboard__key-shift').innerHTML && Keyboard.properties.shiftKey) {
+          if (!Keyboard.properties.isCaps) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.shift;
+          } else if (Keyboard.properties.isCaps) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.small;
+          }
+        } else if (!button.isFnKey) {
+          if (Keyboard.properties.isCaps) {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.shift;
+          } else {
+            Keyboard.elements.keys[i].querySelector('.keyboard__key-small').innerHTML = button.small;
+          }
+        }
+      });
+    }
 
   },
 
