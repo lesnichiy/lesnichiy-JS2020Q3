@@ -10,6 +10,7 @@ const Keyboard = {
     value: "",
     isCaps: false,
     shiftKey: false,
+    isSoundOn: true,
   },
 
   keyLayouts: {
@@ -790,7 +791,11 @@ const Keyboard = {
 
       switch (key.code) {
         case "Sound":
-          keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          if (Keyboard.properties.isSoundOn) {
+            keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--active", "keyboard__key--fn");
+          } else {
+            keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          }
           keyElement.innerHTML = createIconHTML("volume_up");
 
           break;
@@ -950,6 +955,16 @@ const Keyboard = {
         currentKey.classList.toggle('keyboard__key--active');
       }
 
+      //Sounds
+      if (code.match(/Sound/)) {
+        currentKey.classList.toggle("keyboard__key--active");
+        Keyboard.properties.isSoundOn = !Keyboard.properties.isSoundOn;
+      }
+
+      if (Keyboard.properties.isSoundOn) {
+        Keyboard.playKeySound(keyObj.code);
+      }
+
       //Switch language
       if (keyObj.code.match(/Lang/)) this.switchLanguage(keyObj.shift);
 
@@ -978,6 +993,22 @@ const Keyboard = {
 
     }
 
+
+  },
+
+  playKeySound(code) {
+    const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').shift;
+    console.log(currentLang);
+    let audio = null;
+
+    if (code.match(/Lang/)) {
+      audio = document.querySelector('audio');
+    }
+
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
 
   },
 
