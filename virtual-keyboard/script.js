@@ -14,6 +14,20 @@ const Keyboard = {
 
   keyLayouts: {
     ru: [
+        /*0 row*/
+      {
+        small: 'sound',
+        shift: null,
+        code: 'Sound',
+        isFnKey: true,
+      },
+      {
+        small: 'record',
+        shift: null,
+        code: 'Record',
+        isFnKey: true,
+      },
+
       /*1st row*/
       {
         small: 'ё',
@@ -355,13 +369,22 @@ const Keyboard = {
         code: 'ArrowRight',
         isFnKey: true,
       },
-      /*"ё", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "backspace",
-      "tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]",
-      "caps", "a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'", "enter",
-      "shift", "z", "x", "c", "v", "b", "n", "m", ",", ".", "?",
-      "done", "ru", "space", "arrowLeft", "arrowRight"*/
+
     ],
     en: [
+      /*0 row*/
+      {
+        small: 'sound',
+        shift: null,
+        code: 'Sound',
+        isFnKey: true,
+      },
+      {
+        small: 'record',
+        shift: null,
+        code: 'Record',
+        isFnKey: true,
+      },
       /*1st row*/
       {
         small: '`',
@@ -756,7 +779,7 @@ const Keyboard = {
 
     keyLayout.forEach(key => {
       const keyElement = document.createElement("button");
-      const insertLineBreak = ["Backspace", "BracketRight", "Enter", "Slash"].indexOf(key.code) !== -1;
+      const insertLineBreak = ["Backspace", "BracketRight", "Enter", "Slash", "Record"].indexOf(key.code) !== -1;
 
       this.keyButtons.push(key);
 
@@ -766,6 +789,18 @@ const Keyboard = {
       keyElement.classList.add("keyboard__key");
 
       switch (key.code) {
+        case "Sound":
+          keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          keyElement.innerHTML = createIconHTML("volume_up");
+
+          break;
+
+        case "Record":
+          keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          keyElement.innerHTML = createIconHTML("keyboard_voice");
+
+          break;
+
         case "Tab":
           keyElement.classList.add("keyboard__key--wide", "keyboard__key--fn");
           keyElement.innerHTML = createIconHTML("keyboard_tab");
