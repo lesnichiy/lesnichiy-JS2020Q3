@@ -888,7 +888,7 @@ const Keyboard = {
     Keyboard.elements.outputText.focus();
 
     if (type.match(/keydown|mousedown/)) {
-      //if (type.match(/key/)) evt.preventDefault();
+      if (type.match(/key/)) evt.preventDefault();
       let keyIndex = Keyboard.keyButtons.findIndex( key => key.code === code);
       let currentKey = Keyboard.elements.keys[keyIndex];
       currentKey.classList.add('keyboard__key--pressed');
@@ -914,8 +914,6 @@ const Keyboard = {
         }
         currentKey.classList.toggle('keyboard__key--active');
       }
-
-      //if (Keyboard.properties.shiftKey) Keyboard.switchUpperCase(true);
 
       //Switch language
       if (keyObj.code.match(/Lang/)) this.switchLanguage(keyObj.shift);
@@ -970,6 +968,9 @@ const Keyboard = {
       }
 
     });
+
+    if (Keyboard.properties.isCaps) Keyboard.switchUpperCase(true);
+    if (Keyboard.properties.shiftKey) Keyboard.switchUpperCase(true);
 
   },
 
@@ -1067,22 +1068,6 @@ const Keyboard = {
     Keyboard.elements.outputText.setSelectionRange(cursorPosition, cursorPosition);
 
   },
-
-  /*_triggerEvent(handlerName) {
-    if (typeof this.eventHandlers[handlerName] == "function") {
-      this.eventHandlers[handlerName](this.properties.value);
-    }
-  },
-
-  _toggleCapsLock() {
-    this.properties.capsLock = !this.properties.capsLock;
-
-    for (const key of this.elements.keys) {
-      if (key.childElementCount === 0) {
-        key.textContent = this.properties.capsLock ? key.textContent.toUpperCase() : key.textContent.toLowerCase();
-      }
-    }
-  },*/
 
   open(initialValue) {
     this.properties.value = initialValue || "";
