@@ -4,7 +4,6 @@
   margin: 30px auto;
   padding: 10px;
   font-size: 20px;
-  height: calc(100vh - 380px);
   min-height: 300px;
 }
 
@@ -115,4 +114,89 @@
   font-size: 0.7rem;
   opacity: 0.5;
   transform: translateX(0.5rem);
+}
+
+@media (max-width: 800px) {
+  .keyboard__key {
+    width: 5%;
+    font-size: 0.9rem;
+    height: 35px;
+  }
+
+  .keyboard__key--wide {
+    width: 10%;
+  }
+
+  .keyboard__key--extra-wide {
+    width: 15%;
+  }
+
+  .keyboard__key--activatable::after {
+    top: 7px;
+    right: 7px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .keyboard__key-shift {
+    top: 0.3rem;
+    left: 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .keyboard__key--active::after {
+    background: #08ff00;
+  }
+
+  .shift-key--active:not(:empty) {
+    font-size: 0.9rem;
+  }
+
+  .shift-key--active:not(:empty) ~ .shift-key--inactive {
+    font-size: 0.7rem;
+    transform: translateX(0.3rem);
+  }
+
+}
+
+@media (max-width: 650px) {
+  .keyboard__key {
+    width: 5%;
+    font-size: 0.7rem;
+  }
+
+  .keyboard__key--wide {
+    width: 10%;
+  }
+
+  .keyboard__key--extra-wide {
+    width: 15%;
+  }
+
+  .keyboard__key--activatable::after {
+    top: 5px;
+    right: 5px;
+    width: 6px;
+    height: 6px;
+  }
+
+  .keyboard__key-shift {
+    top: 0.3rem;
+    left: 0.3rem;
+    font-size: 0.5rem;
+  }
+
+  .keyboard__key--active::after {
+    background: #08ff00;
+  }
+
+  .shift-key--active:not(:empty) {
+    font-size: 0.7rem;
+  }
+
+  .shift-key--active:not(:empty) ~ .shift-key--inactive {
+    font-size: 0.6rem;
+    transform: translateX(0.3rem);
+  }
+
 }
