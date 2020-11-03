@@ -1,0 +1,805 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+  clip-path: inset(0px 0px 99.9% 99.9%);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.content-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.shelter-main-page-h3 {
+  font-family: Georgia, serif;
+  font-size: 35px;
+  line-height: 130%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.shelter-main-page-h4 {
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 115%;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.shelter-button {
+  border: none;
+  border-radius: 100px;
+  padding: 15px 45px;
+  color: #292929;
+  background-color: #f1cdb3;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  transition-duration: 0.5s;
+}
+
+.shelter-button:hover {
+  background-color: #fddcc4;
+  cursor: pointer;
+}
+
+.shelter-button:active {
+  outline: none;
+}
+
+/* ===== header ===== */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.header-inner-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo-site-title {
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 110%;
+  color: #545454;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.header-logo-subtitle {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #292929;
+  text-align: center;
+}
+
+.header-logo-link {
+  text-decoration: none;
+  display: block;
+}
+
+.header-site-menu-burger-button {
+  display: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.header-site-menu-burger-button svg line {
+  stroke: #000000;
+}
+
+.header-site-menu-burger-button:active,
+.header-site-menu-burger-button:focus {
+  outline: none;
+}
+
+.header-overlay-mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+}
+
+.site-menu-list {
+  list-style: none;
+  display: flex;
+  width: 443px;
+  justify-content: space-between;
+}
+
+.site-menu-list-item-link {
+  display: block;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 160%;
+  color: #545454;
+  text-decoration: none;
+}
+
+.site-menu-list-item-link:hover {
+  color: #292929;
+}
+
+.site-menu-list-item-link--current {
+  color: #292929;
+  border-bottom: 3px solid #f1cdb3;
+}
+
+.site-menu-list-item-link--not-active {
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+/* ===== / header ===== */
+
+/* ===== pets-our-friends ===== */
+.pets-our-friends {
+  background-color: #f6f6f6;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.pets-our-friends-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pets-our-friends-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.pets-our-friends-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+  list-style: none;
+  max-width: 1200px;
+  max-height: 930px;
+  overflow-y: hidden;
+}
+
+.pets-our-friends-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 270px;
+  background-color: #fafafa;
+  border-radius: 9px;
+  transition-duration: 0.5s;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.pets-our-friends-card:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+  cursor: pointer;
+}
+
+.pets-our-friends-card-picture {
+  display: block;
+  width: 100%;
+}
+
+.pets-our-friends-card-name {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.pets-our-friends-card-button {
+  background-color: transparent;
+  margin-bottom: 30px;
+  box-shadow: inset 0 0 0 2px #f1cdb3;
+}
+
+.pets-our-friends-card-button:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 0 2px #fddcc4;
+  background-color: #fddcc4;
+}
+
+.pets-our-friends-card-button:active {
+  outline: none;
+}
+
+.pets-our-friends-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.pets-our-friends-nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  border-radius: 50%;
+  background: none;
+  transition-duration: 0.5s;
+}
+
+.pets-our-friends-nav-button + .pets-our-friends-nav-button {
+   margin-left: 20px;
+ }
+
+.pets-our-friends-nav-button img {
+  display: block;
+}
+
+.pets-our-friends-nav-button--start {
+  transform: rotate(180deg);
+}
+.pets-our-friends-nav-button--end {
+}
+.pets-our-friends-nav-button--prev {
+  transform: rotate(180deg);
+}
+.pets-our-friends-nav-button--next {
+}
+.pets-our-friends-nav-button--current-page-num {
+  color: #292929;
+}
+
+.pets-our-friends-nav-button:hover {
+  cursor: pointer;
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+
+.pets-our-friends-nav-button:active,
+.pets-our-friends-nav-button:focus {
+  outline: none;
+}
+
+.pets-our-friends-nav-button--disabled {
+  border: 2px solid #cdcdcd;
+  cursor: default;
+}
+.pets-our-friends-nav-button--disabled svg path {
+  fill: #cdcdcd;
+}
+.pets-our-friends-nav-button--disabled:hover {
+  cursor: default;
+  background-color: transparent;
+  border: 2px solid #cdcdcd;
+}
+
+/* ===== / pets-our-friends ===== */
+
+/* ===== footer ===== */
+.footer {
+  padding-top: 40px;
+  background: url(../../assets/images/noise_transparent.png),
+  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%),
+  #211F20;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.footer-contacts {
+  margin-top: 16px;
+  max-width: 280px;
+}
+
+.footer-contacts .footer-icon-and-text-wrapper {
+  margin-top: 40px;
+}
+
+.footer-address {
+  max-width: 302px;
+  margin-top: 16px;
+  margin-right: 160px;
+  margin-left: 160px;
+}
+
+.footer-address .footer-icon-and-text-wrapper {
+  margin-top: 33px;
+}
+
+.footer-title {
+  color: #ffffff;
+}
+
+.footer-icon-and-text-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer-icon-and-text-wrapper a {
+  display: block;
+  color: #f1cdb3;
+  text-decoration: none;
+}
+
+.footer-icon-and-text-wrapper a + a {
+  margin-left: 20px;
+}
+
+.footer-icon-and-text-wrapper img {
+  display: block;
+}
+/* ===== / footer ===== */
+
+/* ===== modal window ===== */
+.modal-window-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+.modal-window-scroll-hidden {
+  overflow: hidden;
+}
+
+.modal-window-wrapper--closed {
+  display: none;
+}
+
+.modal-window-overlay {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(41, 41, 41, 0.6);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.modal-window-overlay:hover {
+  background-color: rgba(41, 41, 41, 0.8);
+}
+
+.modal-window {
+  position: relative;
+  z-index: 10;
+  background-color: #fafafa;
+  width: 900px;
+  min-height: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.modal-window:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.modal-window-close-button {
+  position: absolute;
+  z-index: 10;
+  top: -52px;
+  right: -42px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  background-color: transparent;
+  background-image: url("../../assets/icons/modal-close-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px #f1cdb3;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.modal-window-close-button--overlay-hover,
+.modal-window-close-button:hover {
+  background-color: #fddcc4;
+  box-shadow: inset 0 0 0 2px #fddcc4;
+}
+
+.modal-window-close-button:active,
+.modal-window-close-button:focus {
+  outline: none;
+}
+
+.modal-window-picture {
+  display: block;
+  width: 500px;
+  height: 500px;
+  flex-shrink: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.modal-window-content {
+  margin-left: 29px;
+  margin-right: 20px;
+}
+
+.modal-window-title {
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.modal-window-subtitle {
+  color: #000000;
+}
+
+.modal-window-description {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+.modal-window-pet-info-list {
+  list-style: none;
+}
+
+.modal-window-pet-info-list li {
+  position: relative;
+  padding-left: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.modal-window-pet-info-list li::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-2px);
+  border-radius: 50%;
+  background-color: #f1cdb3;
+}
+
+.modal-window-pet-info-list li span {
+  font-weight: 400;
+}
+
+.modal-window-pet-info-list li + li {
+  margin-top: 10px;
+}
+/* ===== / modal window ===== */
+
+
+@media (max-width: 1279px) {
+  .content-wrapper {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* ===== header ===== */
+
+  /* ===== / header ===== */
+
+  /* ===== pets-our-friends ===== */
+  .pets-our-friends {
+    padding-bottom: 76px;
+  }
+
+  .pets-our-friends-title {
+    margin-bottom: 15px;
+  }
+
+  .pets-our-friends-cards {
+    max-width: 708px;
+    max-height: 1395px;
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .pets-our-friends-nav {
+    margin-top: 25px;
+  }
+  /* ===== / pets-our-friends ===== */
+
+  /* ===== footer ===== */
+  .footer {
+    padding-top: 30px;
+  }
+
+  .footer-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-contacts,
+  .footer-address {
+    margin: 0 30px 0;
+  }
+
+  .footer-picture {
+    margin-top: 65px;
+  }
+  /* ===== / footer ===== */
+
+  /* ===== modal window ===== */
+
+  .modal-window {
+    width: 630px;
+    min-height: 350px;
+  }
+
+  .modal-window-picture {
+    width: 350px;
+    height: 350px;
+  }
+
+  .modal-window-content {
+    max-width: 260px;
+    margin-left: 11px;
+    margin-right: 9px;
+  }
+
+  .modal-window-description {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 260px;
+  }
+
+
+  .modal-window-pet-info-list li + li {
+    margin-top: 6px;
+  }
+  /* ===== / modal window ===== */
+}
+
+@media (max-width: 767px) {
+  .scroll-hidden {
+    overflow: hidden;
+  }
+
+  .content-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .shelter-main-page-h3 {
+    font-size: 25px;
+  }
+
+  /* ===== header ===== */
+  .header-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .header-logo-link {
+    z-index: 100;
+  }
+
+  .header-site-menu-burger-button {
+    display: block;
+    margin-right: 43px;
+    z-index: 100;
+    transition-property: transform;
+    transition-duration: 0.6s;
+  }
+
+
+  .header-site-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -320px;
+    z-index: 50;
+    background-color: #ffffff;
+    transition-property: transform;
+    transition-duration: 0.6s;
+  }
+
+  .site-menu-list {
+    width: 320px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .site-menu-list-item + .site-menu-list-item {
+    margin-top: 40px;
+  }
+
+  .site-menu-list-item-link {
+    font-size: 32px;
+  }
+
+  .header-inner-wrapper--opened {
+    width: 300px;
+  }
+
+  .header-site-menu-burger-button--opened {
+    transform: rotate(270deg);
+    transition-property: transform;
+    transition-duration: 0.6s;
+  }
+
+  .header-site-menu--opened {
+    transform: translateX(-320px);
+    transition-property: transform;
+    transition-duration: 0.6s;
+  }
+
+  .header-overlay-mobile-menu--opened {
+    display: block;
+    background-color: rgba(41, 41, 41, 0.6);
+  }
+  /* ===== / header ===== */
+
+  /* ===== pets-our-friends ===== */
+  .pets-our-friends {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .pets-our-friends-title {
+    margin-bottom: 27px;
+  }
+
+  .pets-our-friends-cards {
+    max-width: 270px;
+    max-height: 1395px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .pets-our-friends-nav {
+    margin-top: 27px;
+  }
+
+  .pets-our-friends-nav-button + .pets-our-friends-nav-button {
+    margin-left: 10px;
+  }
+  /* ===== / pets-our-friends ===== */
+
+  /* ===== footer ===== */
+  .footer-wrapper {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .footer-contacts,
+  .footer-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 0;
+  }
+
+  .footer-contacts {
+    margin-bottom: 40px;
+  }
+
+  .footer-address .footer-icon-and-text-wrapper {
+    align-self: flex-start;
+    margin-top: 40px;
+  }
+
+  .footer-address-boston,
+  .footer-address-london {
+    width: 300px;
+    margin-top: 40px;
+  }
+
+  .footer-address-boston a:last-child,
+  .footer-address-london a:last-child {
+    flex-grow: 1;
+  }
+
+  .footer-title {
+    text-align: center;
+    max-width: 270px;
+  }
+
+  .footer-picture {
+    max-width: 260px;
+    margin-top: 40px;
+  }
+  /* ===== / footer ===== */
+
+
+  /* ===== modal window ===== */
+
+  .modal-window {
+    width: 240px;
+    min-height: 350px;
+  }
+
+  .modal-window-picture {
+    display: none;
+  }
+
+  .modal-window-content {
+    max-width: 220px;
+    margin-left: 11px;
+    margin-right: 9px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .modal-window-description {
+    font-size: 13px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 220px;
+  }
+
+
+  .modal-window-pet-info-list li + li {
+    margin-top: 5px;
+  }
+  /* ===== / modal window ===== */
+}
