@@ -10,6 +10,7 @@ const Keyboard = {
     value: "",
     isCaps: false,
     shiftKey: false,
+    isSoundOn: true,
   },
 
   keyLayouts: {
@@ -790,7 +791,11 @@ const Keyboard = {
 
       switch (key.code) {
         case "Sound":
-          keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          if (Keyboard.properties.isSoundOn) {
+            keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--active", "keyboard__key--fn");
+          } else {
+            keyElement.classList.add("keyboard__key--wide", "keyboard__key--activatable", "keyboard__key--fn");
+          }
           keyElement.innerHTML = createIconHTML("volume_up");
 
           break;
@@ -950,6 +955,17 @@ const Keyboard = {
         currentKey.classList.toggle('keyboard__key--active');
       }
 
+      //Sounds
+      if (code.match(/Sound/)) {
+        currentKey.classList.toggle("keyboard__key--active");
+        Keyboard.properties.isSoundOn = !Keyboard.properties.isSoundOn;
+        Keyboard.playKeySound(keyObj.code);
+      }
+
+      if (Keyboard.properties.isSoundOn) {
+        Keyboard.playKeySound(keyObj.code);
+      }
+
       //Switch language
       if (keyObj.code.match(/Lang/)) this.switchLanguage(keyObj.shift);
 
@@ -978,6 +994,75 @@ const Keyboard = {
 
     }
 
+
+  },
+
+  playKeySound(code) {
+    const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').shift;
+
+    let soundType = null;
+
+    switch (code) {
+      case "Sound":
+          soundType = 'sound';
+
+        break;
+
+      case "Record":
+        soundType = 'record';
+
+        break;
+
+      case "Tab":
+        soundType = 'tab';
+
+        break;
+
+      case "Backspace":
+        soundType = 'backspace';
+
+        break;
+
+      case "CapsLock":
+        soundType = 'caps';
+
+        break;
+
+      case "ShiftLeft":
+        soundType = 'shift';
+
+        break;
+
+      case "Enter":
+        soundType = 'enter';
+
+        break;
+
+
+      case "Lang":
+        soundType = 'lang';
+        break;
+
+      case "Done":
+        soundType = 'done';
+
+        break;
+      default:
+        if (code.match(/Digit/)) {
+          soundType = `digit-${currentLang}`;
+        } else {
+          soundType = `key-${currentLang}`;
+        }
+
+        break;
+    }
+
+    const audio = document.querySelector(`audio[data-sound-type="${soundType}"]`);
+
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
 
   },
 
