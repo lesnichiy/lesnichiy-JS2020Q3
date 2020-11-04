@@ -1,3 +1,5 @@
+window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
 const Keyboard = {
   elements: {
     outputText: null,
@@ -755,6 +757,10 @@ const Keyboard = {
 
     this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
 
+    //Speech Rec
+    this.elements.recognition = new SpeechRecognition();
+    this.elements.recognition.interimResults = true;
+
     // Add to DOM
     this.elements.keyboardMain.appendChild(this.elements.keysContainer);
     document.body.appendChild(this.elements.outputText);
@@ -1075,14 +1081,40 @@ const Keyboard = {
 
   recordVoice(isRecording) {
 
+    const recordingProcess = (evt) => {
+      let recordText = Array.from(evt.results)
+          .map(result => result[0])
+          .map(result => result.transcript)
+          .join('');
 
-    const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').small;
+      let cursorPosition = Keyboard.elements.outputText.selectionStart;
+      const leftText = Keyboard.elements.outputText.value.slice(0, cursorPosition);
+      const rightText = Keyboard.elements.outputText.value.slice(cursorPosition);
+
+      if (evt.results[0].isFinal) {
+        Keyboard.elements.outputText.value = `${leftText}${recordText}${rightText}`;
+        cursorPosition += recordText.length;
+        Keyboard.elements.outputText.setSelectionRange(cursorPosition, cursorPosition);
+      }
+
+    };
 
     if (isRecording) {
-      console.log('Запись пошла', currentLang);
+
+      const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').small;
+
+      Keyboard.elements.recognition.lang = currentLang === 'en' ? 'en-US' : currentLang;
+
+      Keyboard.elements.recognition.addEventListener('result', recordingProcess);
+      Keyboard.elements.recognition.addEventListener('end', Keyboard.elements.recognition.start);
+      Keyboard.elements.recognition.start();
+
     } else {
-      console.log('Закончили');
+      Keyboard.elements.recognition.abort();
+      Keyboard.elements.recognition.removeEventListener('result', recordingProcess);
+      Keyboard.elements.recognition.removeEventListener('end', Keyboard.elements.recognition.start)
     }
+
   },
 
   switchLanguage(nextLang) {
