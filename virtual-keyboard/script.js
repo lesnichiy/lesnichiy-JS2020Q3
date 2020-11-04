@@ -757,9 +757,7 @@ const Keyboard = {
 
     this.elements.keys = this.elements.keysContainer.querySelectorAll(".keyboard__key");
 
-    //Speech Rec
-    this.elements.recognition = new SpeechRecognition();
-    this.elements.recognition.interimResults = true;
+
 
     // Add to DOM
     this.elements.keyboardMain.appendChild(this.elements.keysContainer);
@@ -1092,29 +1090,29 @@ const Keyboard = {
       const rightText = Keyboard.elements.outputText.value.slice(cursorPosition);
 
       if (evt.results[0].isFinal) {
-        Keyboard.elements.outputText.value = `${leftText}${recordText}${rightText}`;
-        cursorPosition += recordText.length;
+        Keyboard.elements.outputText.value = `${leftText} ${recordText}${rightText}`;
+        cursorPosition += recordText.length + 1; //+1 - because space
         Keyboard.elements.outputText.setSelectionRange(cursorPosition, cursorPosition);
       }
 
     };
 
     if (isRecording) {
+      Keyboard.elements.recognition = new SpeechRecognition();
+      Keyboard.elements.recognition.interimResults = true;
 
       const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').small;
-
       Keyboard.elements.recognition.lang = currentLang === 'en' ? 'en-US' : currentLang;
 
       Keyboard.elements.recognition.addEventListener('result', recordingProcess);
       Keyboard.elements.recognition.addEventListener('end', Keyboard.elements.recognition.start);
       Keyboard.elements.recognition.start();
-
     } else {
-      Keyboard.elements.recognition.abort();
       Keyboard.elements.recognition.removeEventListener('result', recordingProcess);
       Keyboard.elements.recognition.removeEventListener('end', Keyboard.elements.recognition.start)
+      Keyboard.elements.recognition.abort();
+      Keyboard.elements.recognition = null;
     }
-
   },
 
   switchLanguage(nextLang) {
