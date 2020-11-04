@@ -11,6 +11,7 @@ const Keyboard = {
     isCaps: false,
     shiftKey: false,
     isSoundOn: true,
+    isRecordOn: false,
   },
 
   keyLayouts: {
@@ -961,9 +962,15 @@ const Keyboard = {
         Keyboard.properties.isSoundOn = !Keyboard.properties.isSoundOn;
         Keyboard.playKeySound(keyObj.code);
       }
-
       if (Keyboard.properties.isSoundOn) {
         Keyboard.playKeySound(keyObj.code);
+      }
+
+      //Record
+      if (code.match(/Record/)) {
+        currentKey.classList.toggle("keyboard__key--active");
+        Keyboard.properties.isRecordOn = !Keyboard.properties.isRecordOn;
+        Keyboard.recordVoice(Keyboard.properties.isRecordOn);
       }
 
       //Switch language
@@ -1064,6 +1071,18 @@ const Keyboard = {
       audio.play();
     }
 
+  },
+
+  recordVoice(isRecording) {
+
+
+    const currentLang = Keyboard.keyButtons.find( key => key.code === 'Lang').small;
+
+    if (isRecording) {
+      console.log('Запись пошла', currentLang);
+    } else {
+      console.log('Закончили');
+    }
   },
 
   switchLanguage(nextLang) {
