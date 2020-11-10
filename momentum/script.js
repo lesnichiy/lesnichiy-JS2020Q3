@@ -152,11 +152,7 @@ function setBgAndGreeting() {
 
 //Get Name from localStorage
 function getName() {
-  if (localStorage.getItem('name') === null) {
-    nameElem.textContent = '[Enter Your Name Here]';
-  } else {
-    nameElem.textContent = localStorage.getItem('name');
-  }
+  nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
 }
 
 //Set Name to localStorage
@@ -167,11 +163,6 @@ function setName(evt) {
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
       if (nameElem.textContent === '') {
-        if (localStorage.getItem('name')) {
-          nameElem.textContent = localStorage.getItem('name');
-        } else {
-          nameElem.textContent = '[Enter Your Name Here]';
-        }
         nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
       } else {
         localStorage.setItem('name', nameElem.textContent);
@@ -182,8 +173,8 @@ function setName(evt) {
   if (evt.type === 'blur') {
     if (nameElem.textContent === '') {
       nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
-    } else {
-      nameElem.textContent = localStorage.getItem('name');
+    } else if (nameElem.textContent !== '[Enter Your Name Here]') {
+      localStorage.setItem('name', nameElem.textContent);
     }
   }
 }
