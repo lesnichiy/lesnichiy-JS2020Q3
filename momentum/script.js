@@ -32,7 +32,6 @@ function showTime() {
     getWeather();
   }
 
-
   setTimeout(showTime, 1000)
 }
 
@@ -218,30 +217,32 @@ let openWeatherLang = `en`;
 let openWeatherUnitsType = `metric`;
 
 async function getWeather() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityElem.textContent}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
-  const res = await fetch(url);
-  const data = await res.json();
-  const temperatureRender = (temperature) => {
-    temperature = Math.round(temperature);
-    return (temperature >= 0) ? `+${temperature}` : temperature ;
-  };
+  if (weatherCityElem.textContent === '' || weatherCityElem.textContent === CITY_FIELD_DEFAULT_TEXT) {
+    return;
+  } else {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityElem.textContent}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    const temperatureRender = (temperature) => {
+      temperature = Math.round(temperature);
+      return (temperature >= 0) ? `+${temperature}` : temperature ;
+    };
 
-  try {
-    weatherIconElem.classList.add(`owf-${data.weather[0].id}`);
-    weatherDescriptionElem.textContent = data.weather[0].description;
-    weatherTemperatureElem.textContent = `${temperatureRender(data.main.temp)}°C`;
-    weatherHumidityElem.textContent = `${data.main.humidity}%`;
-    weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
-  } catch (evt) {
-    console.log(evt.message);
-    weatherCityElem.textContent = `[${data.message}]`;
-    weatherIconElem.className = `weather-icon owf owf-2x`;
-    weatherDescriptionElem.textContent = ``;
-    weatherTemperatureElem.textContent = ``;
-    weatherHumidityElem.textContent = ``;
-    weatherWindSpeedElem.textContent = ``;
+    try {
+      weatherIconElem.classList.add(`owf-${data.weather[0].id}`);
+      weatherDescriptionElem.textContent = data.weather[0].description;
+      weatherTemperatureElem.textContent = `${temperatureRender(data.main.temp)}°C`;
+      weatherHumidityElem.textContent = `${data.main.humidity}%`;
+      weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
+    } catch (err) {
+      weatherCityElem.textContent = `[${data.message}]`;
+      weatherIconElem.className = `weather-icon owf owf-2x`;
+      weatherDescriptionElem.textContent = ``;
+      weatherTemperatureElem.textContent = ``;
+      weatherHumidityElem.textContent = ``;
+      weatherWindSpeedElem.textContent = ``;
+    }
   }
-
 }
 document.addEventListener('DOMContentLoaded', getWeather);
 weatherCityElem.addEventListener('click', (evt) => setValue(evt, evt.target, 'city', CITY_FIELD_DEFAULT_TEXT));

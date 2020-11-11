@@ -54,6 +54,7 @@ body {
 
 #name {
   display: inline-block;
+  min-width: 5rem;
 }
 
 .focus-title {
