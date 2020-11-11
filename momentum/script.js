@@ -3,6 +3,9 @@ const COLOR_PRIMARY_CONTRAST = '#ffffff';
 const DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 const IMAGES_URLs_PER_HOUR = createBgImgDayArrURLs();
+const NAME_FIELD_DEFAULT_TEXT = '[Enter Your Name Here]';
+const FOCUS_FIELD_DEFAULT_TEXT = '[Enter Your Focus For Today Here]';
+const CITY_FIELD_DEFAULT_TEXT = '[Enter Your City Here]';
 
 const timeElem = document.querySelector('#time');
 const dayElem = document.querySelector('#day');
@@ -95,11 +98,10 @@ function createBgImgDayArrURLs() {
 
 //smooth change img
 function viewBgImage(url) {
-  const body = document.querySelector('body');
   const img = document.createElement('img');
   img.src = url;
   img.onload = () => {
-    body.style.backgroundImage = `url(${url})`;
+    document.body.style.backgroundImage = `url(${url})`;
   };
 }
 
@@ -150,75 +152,42 @@ function setBgAndGreeting() {
   }
 }
 
-//Get Name from localStorage
-function getName() {
-  nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
+//Get value for contenteditable field
+function getValue(element, elementName, defaultText) {
+  element.textContent = localStorage.getItem(elementName) || defaultText;
 }
 
-//Set Name to localStorage
-function setName(evt) {
+//Set value in contenteditable field
+function setValue(evt, element, elementName, defaultText) {
   if (evt.type === 'click') {
-    nameElem.textContent = '';
+    element.textContent = '';
   }
   if (evt.type === 'keypress') {
     if (evt.which === 13 || evt.keyCode === 13) {
-      if (nameElem.textContent === '') {
-        nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
+      if (element.textContent === '') {
+        element.textContent = localStorage.getItem(elementName) || defaultText;
       } else {
-        localStorage.setItem('name', nameElem.textContent);
+        localStorage.setItem(elementName, element.textContent);
       }
-      nameElem.blur();
+      element.blur();
+      if (element.id === 'weather-city') getWeather();
     }
   }
   if (evt.type === 'blur') {
-    if (nameElem.textContent === '') {
-      nameElem.textContent = localStorage.getItem('name') || '[Enter Your Name Here]';
-    } else if (nameElem.textContent !== '[Enter Your Name Here]') {
-      localStorage.setItem('name', nameElem.textContent);
+    if (element.textContent === '') {
+      element.textContent = localStorage.getItem(elementName) || defaultText;
+    } else if (element.textContent !== defaultText) {
+      localStorage.setItem(elementName, element.textContent);
     }
   }
 }
 
-//Get Focus from localStorage
-function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focusElem.textContent = '[Enter Your Focus For Today Here]';
-  } else {
-    focusElem.textContent = localStorage.getItem('focus');
-  }
-}
-
-//Set Focus to localStorage
-function setFocus(evt) {
-  if (evt.type === 'click') {
-    focusElem.textContent = '';
-  }
-  if (evt.type === 'keypress') {
-    if (evt.which === 13 || evt.keyCode === 13) {
-      if (focusElem.textContent === '') {
-        focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
-      } else {
-        localStorage.setItem('focus', focusElem.textContent);
-      }
-      focusElem.blur();
-    }
-  }
-  if (evt.type === 'blur') {
-    if (focusElem.textContent === '') {
-      focusElem.textContent = localStorage.getItem('focus') || '[Enter Your Focus For Today Here]';
-    } else {
-      focusElem.textContent = localStorage.getItem('focus');
-    }
-  }
-}
-
-//Event Listeners of Name and Focus
-nameElem.addEventListener('click', setName);
-nameElem.addEventListener('keypress', setName);
-nameElem.addEventListener('blur', setName);
-focusElem.addEventListener('click', setFocus);
-focusElem.addEventListener('keypress', setFocus);
-focusElem.addEventListener('blur', setFocus);
+nameElem.addEventListener('click', (evt) => setValue(evt, evt.target, 'name', NAME_FIELD_DEFAULT_TEXT));
+nameElem.addEventListener('keypress', (evt) => setValue(evt, evt.target, 'name', NAME_FIELD_DEFAULT_TEXT));
+nameElem.addEventListener('blur', (evt) => setValue(evt, evt.target, 'name', NAME_FIELD_DEFAULT_TEXT));
+focusElem.addEventListener('click', (evt) => setValue(evt, evt.target, 'focus', FOCUS_FIELD_DEFAULT_TEXT));
+focusElem.addEventListener('keypress', (evt) => setValue(evt, evt.target, 'focus', FOCUS_FIELD_DEFAULT_TEXT));
+focusElem.addEventListener('blur', (evt) => setValue(evt, evt.target, 'focus', FOCUS_FIELD_DEFAULT_TEXT));
 
 
 //Quotes
@@ -248,41 +217,6 @@ const openWeatherApiKey = `4d7e149d43676736e640d174434d7fc9`;
 let openWeatherLang = `en`;
 let openWeatherUnitsType = `metric`;
 
-function getCity() {
-  if (localStorage.getItem('city') === null) {
-    weatherCityElem.textContent = '[Enter Your City Here]';
-  } else {
-    weatherCityElem.textContent = localStorage.getItem('city');
-  }
-}
-
-function setCity(evt) {
-  if (evt.type === 'click') {
-    weatherCityElem.textContent = '';
-  }
-  if (evt.type === 'keypress') {
-    if (evt.which === 13 || evt.keyCode === 13) {
-      if (weatherCityElem.textContent === '') {
-        weatherCityElem.textContent = localStorage.getItem('city') ||'[Enter Your City Here]';
-      } else {
-        localStorage.setItem('city', weatherCityElem.textContent);
-      }
-      evt.target.blur();
-      getWeather();
-    }
-  }
-  if (evt.type === 'blur') {
-    if (weatherCityElem.textContent === '' ) {
-      weatherCityElem.textContent = localStorage.getItem('city') || '[Enter Your City Here]';
-    } else {
-      weatherCityElem.textContent = localStorage.getItem('city');
-      //getWeather();
-    }
-
-  }
-
-}
-
 async function getWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityElem.textContent}&lang=${openWeatherLang}&appid=${openWeatherApiKey}&units=${openWeatherUnitsType}`;
   const res = await fetch(url);
@@ -299,6 +233,7 @@ async function getWeather() {
     weatherHumidityElem.textContent = `${data.main.humidity}%`;
     weatherWindSpeedElem.textContent = `${data.wind.speed} m/s`;
   } catch (evt) {
+    console.log(evt.message);
     weatherCityElem.textContent = `[${data.message}]`;
     weatherIconElem.className = `weather-icon owf owf-2x`;
     weatherDescriptionElem.textContent = ``;
@@ -309,15 +244,13 @@ async function getWeather() {
 
 }
 document.addEventListener('DOMContentLoaded', getWeather);
-weatherCityElem.addEventListener('click', setCity);
-weatherCityElem.addEventListener('keypress', setCity);
-weatherCityElem.addEventListener('blur', setCity);
-
-
+weatherCityElem.addEventListener('click', (evt) => setValue(evt, evt.target, 'city', CITY_FIELD_DEFAULT_TEXT));
+weatherCityElem.addEventListener('keypress', (evt) => setValue(evt, evt.target, 'city', CITY_FIELD_DEFAULT_TEXT));
+weatherCityElem.addEventListener('blur', (evt) => setValue(evt, evt.target, 'city', CITY_FIELD_DEFAULT_TEXT));
 
 //Run
 showTime();
 setBgAndGreeting();
-getName();
-getFocus();
-getCity();
+getValue(nameElem, 'name', NAME_FIELD_DEFAULT_TEXT);
+getValue(focusElem, 'focus', FOCUS_FIELD_DEFAULT_TEXT);
+getValue(weatherCityElem, 'city', CITY_FIELD_DEFAULT_TEXT);
