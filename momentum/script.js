@@ -206,6 +206,7 @@ changeQuoteButton.addEventListener('click', getQuote);
 
 //Weather
 const weatherCityElem = document.querySelector('#weather-city');
+const weatherDataWrapper = document.querySelector('.weather-data-wrapper');
 const weatherIconElem = document.querySelector('.weather-icon');
 const weatherDescriptionElem = document.querySelector('.weather-description');
 const weatherTemperatureElem = document.querySelector('.weather-temperature');
@@ -241,6 +242,14 @@ async function getWeather() {
       weatherTemperatureElem.textContent = ``;
       weatherHumidityElem.textContent = ``;
       weatherWindSpeedElem.textContent = ``;
+    }
+
+    if (weatherTemperatureElem.textContent) {
+      weatherDataWrapper.classList.remove('weather-data-wrapper--hidden');
+      weatherDataWrapper.classList.add('weather-data-wrapper--visible');
+    } else {
+      weatherDataWrapper.classList.add('weather-data-wrapper--hidden');
+      weatherDataWrapper.classList.remove('weather-data-wrapper--visible');
     }
   }
 }

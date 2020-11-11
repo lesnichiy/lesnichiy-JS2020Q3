@@ -40,9 +40,6 @@ body {
   z-index: 5;
 }
 
-#day {
-}
-
 #time {
   font-size: 8rem;
 }
@@ -96,6 +93,14 @@ body {
 
 .weather-city {
   font-size: 1.2rem;
+}
+
+.weather-data-wrapper--hidden {
+  display: none;
+}
+
+.weather-data-wrapper--visible {
+  display: block;
 }
 
 /* ===== quotes ===== */
