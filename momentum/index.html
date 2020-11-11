@@ -20,24 +20,26 @@
 
     <div class='weather-wrapper'>
       <h2 class='weather-city'>Weather In Your City</h2>
-      <h2 class='weather-city' id='weather-city' contenteditable='true'></h2>
-      <div class='weather-icon owf owf-2x'></div>
-      <div class='weather-description'></div>
-      <div class='weather-temperature-wrapper'>Temperature: <span class='weather-temperature'></span></div>
-      <div class='weather-humidity-wrapper'>Humidity: <span class='weather-humidity'></span></div>
-      <div class='weather-wind-speed-wrapper'>Wind speed: <span class='weather-wind-speed'></span></div>
+      <h2 class='weather-city' id='weather-city' spellcheck='false' contenteditable='true'></h2>
+      <div class='weather-data-wrapper weather-data-wrapper--hidden'>
+        <div class='weather-icon owf owf-2x'></div>
+        <div class='weather-description'></div>
+        <div class='weather-temperature-wrapper'>Temperature: <span class='weather-temperature'></span></div>
+        <div class='weather-humidity-wrapper'>Humidity: <span class='weather-humidity'></span></div>
+        <div class='weather-wind-speed-wrapper'>Wind speed: <span class='weather-wind-speed'></span></div>
+      </div>
     </div>
 
     <div class='time-focus-wrapper'>
-      <h2 id='day'>Friday, 23 oct</h2>
-      <time id='time'></time>
+      <h2 id='day' class='day'>Friday, 23 oct</h2>
+      <time id='time' class='time'></time>
       <h1 class='greeting-title'>
         <span id='greeting'></span>
-        <span id='name' contenteditable='true'></span>
+        <span id='name' class='user-name' spellcheck='false' contenteditable='true'></span>
       </h1>
 
       <h2 class='focus-title'>What Is Your Focus For Today?</h2>
-      <h2 class='focus-title' id='focus' contenteditable='true'></h2>
+      <h2 class='focus-title' id='focus' spellcheck='false' contenteditable='true'></h2>
       <button class='change-bg-img-button'>Change background</button>
     </div>
 
